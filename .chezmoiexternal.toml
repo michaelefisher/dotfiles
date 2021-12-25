@@ -11,10 +11,14 @@
     stripComponents = 1
     refreshPeriod = "168h"
 ["~/.oh-my-zsh/custom/plugins/evalcache"]
-    type = "file"
-    url = "https://raw.githubusercontent.com/mroth/evalcache/master/evalcache.plugin.zsh"
+    type = "archive"
+    url = "https://github.com/mroth/evalcache/archive/master.tar.gz"
+    exact = true
+    stripComponents = 1
     refreshPeriod = "168h"
 ["~/.oh-my-zsh/custom/plugins/zsh-nvm"]
-    type = "file"
-    url = "https://raw.githubusercontent.com/lukechilds/zsh-nvm/master/zsh-nvm.plugin.zsh"
+    type = "archive"
+    url = "https://github.com/lukechilds/zsh-nvm/archive/master.tar.gz"
+    exact = true
+    stripComponents = 1
     refreshPeriod = "168h"

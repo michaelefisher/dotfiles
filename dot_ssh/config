@@ -1,0 +1,19 @@
+Host *
+   UseKeychain yes
+   AddKeysToAgent yes
+Host walter
+   User michael
+   Hostname sshwalter.local
+   IdentityFile ~/.ssh/michaelfisher
+   ForwardAgent yes
+   RemoteForward 52698 localhost:52698
+Host website-small
+   User michael
+   Hostname michaelfisher.org
+   IdentityFile ~/.ssh/michaelfisher
+   ForwardAgent yes
+Host mosh
+   User michael
+   Hostname 104.131.54.238
+   IdentityFile ~/.ssh/michaelfisher
+   ForwardAgent yes
