@@ -213,3 +213,6 @@ let g:netrw_browse_split = 2
 
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+" Auto-apply chezmoi
+autocmd BufWritePost ~/.local/share/chezmoi/* ! chezmoi apply --source-path "%"
