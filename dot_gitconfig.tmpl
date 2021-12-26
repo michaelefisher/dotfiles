@@ -22,3 +22,7 @@
 	process = git-lfs filter-process
 [help]
 	autocorrect = 1
+{{- if (index . "github") }}
+[github]
+    token = {{ (onepasswordDocument "") | quote }}
+{{- end }}
