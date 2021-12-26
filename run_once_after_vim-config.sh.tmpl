@@ -1,5 +1,16 @@
 {{- if (eq .chezmoi.os "darwin") -}}
 #!/bin/bash
 
-vim +PluginInstall +qall
+plugin_install () {
+	vim +PlugInstall +qall
+}
+
+compile_ycm() {
+	cd $HOME/.vim/bundle/YouCompleteMe
+    /usr/bin/env python install.py --system-libclang --all
+}
+
+compile_ycm
+plugin_install
+
 {{ end -}}
