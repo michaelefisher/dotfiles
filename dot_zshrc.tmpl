@@ -48,11 +48,11 @@ fi
 # gam
 gam() { "{{ .chezmoi.homeDir }}/bin/gam/gam" "$@" ; }
 
-# Export PATH here
-export PATH="/usr/local/sbin:/usr/local/opt/openjdk/bin:$PATH"
-
 # Start starship
 eval "$(starship init zsh)"
 
 bindkey -v
 bindkey '^R' history-incremental-search-backward
+
+# Export PATH here
+export PATH="/usr/local/sbin:/usr/local/opt/openjdk/bin:$HOME/.pyenv/shims/python3.9:$PATH"
