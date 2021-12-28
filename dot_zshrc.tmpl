@@ -53,3 +53,6 @@ export PATH="/usr/local/sbin:/usr/local/opt/openjdk/bin:$PATH"
 
 # Start starship
 eval "$(starship init zsh)"
+
+bindkey -v
+bindkey '^R' history-incremental-search-backward
