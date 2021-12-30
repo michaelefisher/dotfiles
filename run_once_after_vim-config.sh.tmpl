@@ -1,8 +1,7 @@
-{{- if (eq .chezmoi.os "darwin") -}}
 #!/bin/bash
 
 plugin_install () {
-	vim +PlugInstall +qall
+	vim +PluginInstall +qall
 }
 
 compile_ycm() {
@@ -13,4 +12,3 @@ compile_ycm() {
 compile_ycm
 plugin_install
 
-{{ end -}}
