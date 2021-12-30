@@ -45,7 +45,7 @@ set -g message-style 'fg=colour232 bg=colour16 bold'
 
 # Create new session, split single vertically and horizontally
 new
-{{ if (eq .chezmoi.os "darwin") }}
+{{ if (eq .chezmoi.os "{{ .chezmoi.os }}") }}
 splitw -h
 splitw -v
 {{ end }}
