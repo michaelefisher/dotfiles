@@ -53,6 +53,8 @@ eval "$(starship init zsh)"
 
 bindkey -v
 bindkey '^R' history-incremental-search-backward
+bindkey "^A" vi-beginning-of-line
+bindkey "^E" vi-end-of-line
 
 # Export PATH here
 export PATH="/usr/local/sbin:/usr/local/opt/openjdk/bin:$HOME/.pyenv/shims/:$PATH"
