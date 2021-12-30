@@ -15,6 +15,9 @@
     pf = push --force
 [credential]
 	helper = cache
+{{- if (index . "credential") }}
+    token = {{ (onepasswordDetailsFields "hhkyn33w7zh7dhfea33dmczbxa" "ckgxbstxior66nkkp7lemennq4" "communitytechalliance").password.value | quote }}
+{{- end }}
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f
@@ -22,7 +25,3 @@
 	process = git-lfs filter-process
 [help]
 	autocorrect = 1
-{{- if (index . "github") }}
-[github]
-    token = {{ (onepasswordDetailsFields "hhkyn33w7zh7dhfea33dmczbxa" "ckgxbstxior66nkkp7lemennq4" "communitytechalliance").password.value | quote }}
-{{- end }}
