@@ -1,7 +1,11 @@
 {{- if (eq .chezmoi.os "darwin") -}}
 #!/bin/bash
 
-brew bundle --no-lock --file=/dev/stdin <<EOF
+brew bundle --force cleanup --no-lock --file=/dev/stdin <<EOF
+##### NEVER DELETE THIS ROW #####
+brew "chezmoi"
+##### NEVER DELETE THIS ROW #####
+
 tap "airplanedev/tap"
 tap "hashicorp/tap"
 tap "homebrew/bundle"
