@@ -46,7 +46,7 @@ fi
 [ -f ~/.config/tabtab/__tabtab.bash ] && . ~/.config/tabtab/__tabtab.bash || true
 
 # gam
-gam() { "{{ .chezmoi.homeDir }}/bin/gam/gam" "$@" ; }
+gam() { "{{ .chezmoi.homeDir }}/{{ .gam.binary }}" "$@" ; }
 
 # Start starship
 eval "$(starship init zsh)"
