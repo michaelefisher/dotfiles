@@ -114,12 +114,12 @@ let g:airline_symbols.linenr = ''
 let g:airline#extensions#tabline#enabled = 1
 
 function! AirlineInit()
-	let g:airline section a = airline#section#create(['mode', ' ', 'branch'])
-	let g:airline section b = airline#section#create_left(['fence','hunks','%f'])
-	let g:airline section c = airline#section#create(['filetype'])
-	let g:airline section x = airline#section#create(('%P'])
-	let g:airline section y = airline#section#create(('%B'])
-	let g:airline section z = airline#section#create_right(['%f','%c'])
+	let g:airline_section a = airline#section#create(['mode', ' ', 'branch'])
+	let g:airline_section b = airline#section#create_left(['fence','hunks','%f'])
+	let g:airline_section c = airline#section#create(['filetype'])
+	let g:airline_section x = airline#section#create(['%P'])
+	let g:airline_section y = airline#section#create(['%B'])
+	let g:airline_section z = airline#section#create_right(['%f','%c'])
 endfunction
 autocmd VimEnter * call AirlineInit()
 
