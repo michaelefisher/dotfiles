@@ -46,7 +46,9 @@ fi
 [ -f ~/.config/tabtab/__tabtab.bash ] && . ~/.config/tabtab/__tabtab.bash || true
 
 # gam
-gam() { "{{ .chezmoi.homeDir }}/{{ .gam.binary }}" "$@" ; }
+{{ if eq .chezmoi.os "darwin" -}}
+	gam() { "{{ .chezmoi.homeDir }}/{{ .gam.binary }}" "$@" ; }
+{{ end -}}
 
 # Start starship
 eval "$(starship init zsh)"
