@@ -73,22 +73,14 @@ set nu
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-"let g:lightline = {
-"      \ 'colorscheme': 'jellybeans',
-"      \ 'component': {
-"      \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
-"      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}'
-"      \ },
-"      \ 'separator': { 'left': '⮀', 'right': '⮂' },
-"      \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
-"      \ }
 set t_Co=256
 
-"let g:gitgutter_max_signs = 500  " default value
+let g:gitgutter_max_signs = 500  " default value
+let g:airline#extensions#tabline#enabled = 1
 
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
 " install syntastic
 let g:syntastic_always_populate_loc_list = 1
