@@ -85,8 +85,8 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 set t_Co=256
 
 " install airline
-let g:airline#extensions#tabline#enabled = 0
-let g:airline#extensions#tagbar#enabled = 0
+"let g:airline#extensions#tabline#enabled = 0
+"let g:airline#extensions#tagbar#enabled = 0
 set laststatus=2
 
 let g:gitgutter_max_signs = 500  " default value
