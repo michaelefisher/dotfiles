@@ -73,26 +73,26 @@ set nu
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-#let g:lightline = {
-#      \ 'colorscheme': 'jellybeans',
-#      \ 'component': {
-#      \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
-#      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}'
-#      \ },
-#      \ 'separator': { 'left': '⮀', 'right': '⮂' },
-#      \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
-#      \ }
+"let g:lightline = {
+"      \ 'colorscheme': 'jellybeans',
+"      \ 'component': {
+"      \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
+"      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}'
+"      \ },
+"      \ 'separator': { 'left': '⮀', 'right': '⮂' },
+"      \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
+"      \ }
 set t_Co=256
 
 " install airline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tagbar#enabled = 1
+let g:airline#extensions#tabline#enabled = 0
+let g:airline#extensions#tagbar#enabled = 0
 set laststatus=2
 
 let g:gitgutter_max_signs = 500  " default value
 
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 " install syntastic
