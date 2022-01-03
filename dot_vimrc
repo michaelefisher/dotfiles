@@ -76,17 +76,16 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 set t_Co=256
 
 let g:gitgutter_max_signs = 500  " default value
-let g:airline#extensions#tabline#enabled = 1
-
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
 
 " install syntastic
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+let g:airline#extensions#tabline#enabled = 1
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
 
 " install gitgutter
 let g:gitgutter_sign_added = 'xx'
