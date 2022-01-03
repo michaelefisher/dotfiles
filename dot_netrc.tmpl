@@ -1,2 +1,1 @@
-machine github.com login fisher@techallies.org password token
-
+machine github.com login {{ .email }} password {{ (onepasswordDetailsFields "hhkyn33w7zh7dhfea33dmczbxa" "ckgxbstxior66nkkp7lemennq4" "communitytechalliance").password.value | quote }}
