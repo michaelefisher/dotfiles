@@ -1,6 +1,7 @@
-["~/.vim/bundle/Vundle.vim"]
+[".vim/bundle/Vundle.vim"]
     type = "archive"
     url = "https://github.com/VundleVim/Vundle.vim/archive/master.tar.gz"
     exact = true
+    stripComponents = 1
     refreshPeriod = "168h"
 
