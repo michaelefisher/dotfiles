@@ -73,15 +73,15 @@ set nu
 
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-let g:lightline = {
-      \ 'colorscheme': 'jellybeans',
-      \ 'component': {
-      \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
-      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}'
-      \ },
-      \ 'separator': { 'left': '⮀', 'right': '⮂' },
-      \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
-      \ }
+#let g:lightline = {
+#      \ 'colorscheme': 'jellybeans',
+#      \ 'component': {
+#      \   'readonly': '%{&filetype=="help"?"":&readonly?"⭤":""}',
+#      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}'
+#      \ },
+#      \ 'separator': { 'left': '⮀', 'right': '⮂' },
+#      \ 'subseparator': { 'left': '⮁', 'right': '⮃' }
+#      \ }
 set t_Co=256
 
 " install airline
