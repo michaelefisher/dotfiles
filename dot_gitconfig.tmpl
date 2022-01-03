@@ -13,8 +13,10 @@
 	aa = add --all :/
 	pu = push
     pf = push --force
+[url "https://github.com/"]
+  insteadOf = ssh://git@github.com/
 [credential]
-	helper = cache
+    helper = store
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f
