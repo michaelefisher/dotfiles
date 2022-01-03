@@ -84,8 +84,6 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
 let g:airline#extensions#tabline#enabled = 1
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
 
 " install gitgutter
 let g:gitgutter_sign_added = 'xx'
