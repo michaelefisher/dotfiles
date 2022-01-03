@@ -15,9 +15,6 @@
     pf = push --force
 [credential]
 	helper = cache
-[github]
-    user = {{ .email }}
-    token = {{ (onepasswordDetailsFields "hhkyn33w7zh7dhfea33dmczbxa" "ckgxbstxior66nkkp7lemennq4" "communitytechalliance").password.value | quote }}
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f
