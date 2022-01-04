@@ -54,3 +54,4 @@ if [[ `docker info > /dev/null 2>&1` -eq 0 ]]; then
 fi
 
 alias flushcache="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
+op="eval $(op signin communitytechalliance)"
