@@ -4,7 +4,7 @@
     exact = true
     stripComponents = 1
     refreshPeriod = "168h"
-["/usr/local/bin"]
+["/usr/local/bin/z.sh"]
     type = "archive"
     url = "https://github.com/rupa/z/archive/master.tar.gz"
     exact = true
