@@ -51,7 +51,7 @@ fi
 {{ end -}}
 
 # z.sh
-z() { "{{ .chezmoi.homeDir }}/bin/z/z.sh" "$@" ; }
+z() { . "{{ .chezmoi.homeDir }}/bin/z/z.sh" "$@" ; }
 
 # Start starship
 eval "$(starship init zsh)"
