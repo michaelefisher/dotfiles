@@ -50,6 +50,9 @@ fi
 	gam() { "{{ .chezmoi.homeDir }}/{{ .gam.binary }}" "$@" ; }
 {{ end -}}
 
+# z.sh
+z() { "{{ .chezmoi.homeDir }}/bin/z/z.sh" "$@" ; }
+
 # Start starship
 eval "$(starship init zsh)"
 
