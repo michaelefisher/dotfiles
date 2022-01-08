@@ -4,6 +4,8 @@
 
 {{ if (eq .chezmoi.hostname "cloudshell") }}
 apt-get update
-apt-get install chezmoi -y
-
+apt-get install gcc cmake python3.9-dev python3-pip libssl-dev make libutempter-dev zlib1g-dev chezmoi -y
+sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply michaelefisher
+sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
+echo '#Empty comment' > /home/michael/.zshrc
 {{ end }}
