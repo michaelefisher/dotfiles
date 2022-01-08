@@ -1,1 +1,9 @@
-# Test
+#!/usr/bin/env .bash
+
+# This script only runs in the Google Cloud Shell environment
+
+{{ if (eq .chezmoi.hostname "cloudshell") }}
+apt-get update
+apt-get install chezmoi -y
+
+{{ end }}
