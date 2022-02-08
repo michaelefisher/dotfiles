@@ -16,3 +16,6 @@ format = 'on [$symbol$account(@$domain)(\($project\))]($style)  '
 
 [memory_usage]
 disabled = false
+
+[node.js]
+disabled = true
