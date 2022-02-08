@@ -13,7 +13,7 @@
 	aa = add --all :/
 	pu = push
     pf = push --force
-    rb = "!f() git add --all :/ && git commit -m "fix" --allow-empty; git rebase -i \"$1\" }; f"
+    rb = "!f() { git add --all :/ && git commit -m "fix" --allow-empty; git rebase -i \"$1\" }; f"
 [url "https://github.com/"]
     insteadOf = ssh://git@github.com:
 [url "https://github.com/"]
