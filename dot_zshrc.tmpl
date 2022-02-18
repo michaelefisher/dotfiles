@@ -69,3 +69,10 @@ export NVM_DIR="$HOME/.nvm"
 
 # git
 fixup() { /usr/bin/git add --all && /usr/bin/git commit -m "fixup" --allow-empty && /usr/bin/git rebase -i "$@" ; }
+
+# attach gcloud project
+gcloud() {
+  if [[ -n $PROJECT && $PROJECT=="dev" ]]; then
+	gcloud --project="dev3869c056" "$@"
+  fi
+}
