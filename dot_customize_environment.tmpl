@@ -1,4 +1,4 @@
-#!/usr/bin/env .bash
+#!/usr/bin/env bash
 
 # This script only runs in the Google Cloud Shell environment
 
@@ -7,3 +7,5 @@ apt-get install gcc cmake python3.9-dev python3-pip libssl-dev make libutempter-
 sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply michaelefisher
 sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
 echo '#Empty comment' > /home/michael/.zshrc
+
+export CLOUDSDK_CONFIG=$HOME/.gcloud
