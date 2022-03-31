@@ -3,8 +3,7 @@
 # This script only runs in the Google Cloud Shell environment
 
 apt-get update
-apt-get install gcc cmake python3.9-dev python3-pip libssl-dev make libutempter-dev zlib1g-dev chezmoi -y
-sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply michaelefisher
+apt-get install gcc cmake python3.9-dev python3-pip libssl-dev make libutempter-dev zlib1g-dev -y
 sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
 echo '#Empty comment' > /home/michael/.zshrc
 
