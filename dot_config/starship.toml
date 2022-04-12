@@ -19,3 +19,9 @@ disabled = false
 
 [nodejs]
 disabled = true
+
+[terraform]
+format = "[$version$workspace]($style) "
+symbol = "💠"
+detect_folders = [".terraform"]
+
