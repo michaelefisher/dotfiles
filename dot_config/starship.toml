@@ -21,6 +21,6 @@ disabled = false
 disabled = true
 
 [terraform]
-format = "[$version$workspace]($style) "
-detect_folders = ["**/**/*.terraform"]
+format = "[$version - $workspace]($style) "
+detect_extensions = "tf"
 
