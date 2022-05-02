@@ -21,6 +21,5 @@ disabled = false
 disabled = true
 
 [terraform]
-format = "[$version - $workspace]($style) "
-detect_extensions = "tf"
+format = "[$workspace]($style) "
 
