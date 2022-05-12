@@ -5,15 +5,12 @@ plugin_install () {
 }
 
 compile_ycm() {
-    local canonical_python=$(which python3)
-
-    popd $HOME/.vim/bundle/YouCompleteMe
-    $canonical_python install.py --system-libclang --all
-    		
+    pushd $HOME/.vim/bundle/YouCompleteMe
+    $(which python) install.py --system-libclang --all
 }
 
 if [[ $(compile_ycm) -eq 0 ]]; then
-   if [[ $(plugin_install) -eq 0]]; then
+   if [[ $(plugin_install) -eq 0 ]]; then
 	exit 0;
    fi
 else
