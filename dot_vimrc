@@ -19,7 +19,7 @@ Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 " different version somewhere else.
 " Plugin 'ascenator/L9', {'name': 'newL9'}
 
-Plugin 'chezmoi.vim'
+" Plugin 'chezmoi.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'itchyny/lightline.vim'
 Plugin 'terryma/vim-multiple-cursors'
@@ -30,7 +30,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'chrisbra/csv.vim'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'vim-scripts/indentpython.vim'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'Quramy/tsuquyomi'
 Plugin 'metakirby5/codi.vim'
