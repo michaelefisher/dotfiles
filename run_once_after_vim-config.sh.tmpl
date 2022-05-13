@@ -5,13 +5,10 @@ function plugin_install() {
 }
 
 function compile_ycm() {
-    cd $HOME/.vim/bundle/YouCompleteMe && \
-    python install.py --system-libclang --all
+   	cd $HOME/.vim/bundle/YouCompleteMe
+    /usr/bin/env/python install.py --system-libclang --all
 }
 
-if [[ $(plugin_install) -eq 0 ]]; then
-	if [[ $(compile_ycm) -eq 0 ]]; then
-		exit 0;
-    fi
-fi
+plugin_install
+compile_ycm
 
