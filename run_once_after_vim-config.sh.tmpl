@@ -4,11 +4,5 @@ function plugin_install() {
 	vim +PluginInstall +qall
 }
 
-function compile_ycm() {
-   	cd $HOME/.vim/bundle/YouCompleteMe
-    /usr/bin/env python install.py --system-libclang --all
-}
-
 plugin_install
-compile_ycm
 
