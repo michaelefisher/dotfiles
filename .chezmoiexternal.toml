@@ -1,9 +1,9 @@
-[".vim/bundle/Vundle.vim"]
-    type = "archive"
-    url = "https://github.com/VundleVim/Vundle.vim/archive/master.tar.gz"
-    exact = true
-    stripComponents = 1
-    refreshPeriod = "168h"
+#[".vim/bundle/Vundle.vim"]
+#    type = "archive"
+#    url = "https://github.com/VundleVim/Vundle.vim/archive/master.tar.gz"
+#    exact = true
+#    stripComponents = 1
+#    refreshPeriod = "168h"
 ["bin/z"]
     type = "archive"
     url = "https://github.com/rupa/z/archive/master.tar.gz"
