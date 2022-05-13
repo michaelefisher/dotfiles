@@ -1,20 +1,17 @@
 #!/bin/bash
 
-plugin_install () {
+function plugin_install() {
 	vim +PluginInstall +qall
 }
 
-compile_ycm() {
-    pushd $HOME/.vim/bundle/YouCompleteMe
-    $(which python) install.py --system-libclang --all
+function compile_ycm() {
+    cd $HOME/.vim/bundle/YouCompleteMe && \
+    python install.py --system-libclang --all
 }
 
-if [[ $(compile_ycm) -eq 0 ]]; then
-   if [[ $(plugin_install) -eq 0 ]]; then
-	exit 0;
-   fi
-else
-   echo -e "Compilation and plugin installation failed!"
-   exit 1;
+if [[ $(plugin_install) -eq 0 ]]; then
+	if [[ $(compile_ycm) -eq 0 ]]; then
+		exit 0;
+    fi
 fi
 
