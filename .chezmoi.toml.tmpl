@@ -1,0 +1,18 @@
+{{- $email := "" -}}
+{{- if hasKey . "email" -}}
+{{-   $email = .email -}}
+{{- else -}}
+{{-   $email = promptString "email" -}}
+{{- end -}}
+
+{{- $version := "" -}}
+{{- if hasKey . "version" -}}
+{{-   $version = .version -}}
+{{- else -}}
+{{-   $version = promptString "version" -}}
+{{- end -}}
+
+[data]
+    email = {{ $email | quote }}
+[python]
+    version = {{ $version | version }}
