@@ -1,4 +1,4 @@
 machine github.com
 login {{ .email }}
-password {{ range (onepassword "xqqy5miggitapjmgzpigmwgcuu").fields -}} {{   if and (eq .label "password") (eq .purpose "PASSWORD") -}} {{ .value -}} {{   end -}} {{ end }}
+password {{ (index (onepassword "$UUID").fields 1).value -}} 
 
