@@ -237,4 +237,4 @@ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 " let g:chezmoi = "enabled"
 
 " Auto-apply chezmoi
-autocmd BufWritePost ~/.local/share/chezmoi/* ! chezmoi apply --source-path "%"
+" autocmd BufWritePost ~/.local/share/chezmoi/* ! chezmoi apply --source-path "%"
