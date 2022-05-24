@@ -57,7 +57,11 @@ bindkey "^A" vi-beginning-of-line
 bindkey "^E" vi-end-of-line
 
 # Export PATH here
+{{ if eq .chezmoi.os "Linux" -}}
+export PATH="/usr/local/sbin:/usr/local/opt/openjdk/bin:$HOME/.pyenv/shims/:$HOME/.linuxbrew/bin:$PATH"
+{{ else }}
 export PATH="/usr/local/sbin:/usr/local/opt/openjdk/bin:$HOME/.pyenv/shims/:$PATH"
+{{ end }}
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
