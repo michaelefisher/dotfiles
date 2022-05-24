@@ -57,7 +57,7 @@ bindkey "^A" vi-beginning-of-line
 bindkey "^E" vi-end-of-line
 
 # Export PATH here
-{{ if eq .chezmoi.os "Linux" -}}
+{{ if eq .chezmoi.os "linux" -}}
 export PATH="/usr/local/sbin:/usr/local/opt/openjdk/bin:$HOME/.pyenv/shims/:$HOME/.linuxbrew/bin:$PATH"
 {{ else }}
 export PATH="/usr/local/sbin:/usr/local/opt/openjdk/bin:$HOME/.pyenv/shims/:$PATH"
