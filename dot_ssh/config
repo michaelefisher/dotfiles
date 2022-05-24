@@ -13,8 +13,8 @@ Host website-small
    IdentityFile ~/.ssh/michaelfisher
    ForwardAgent yes
 Host mosh
-   User michael
-   Hostname 138.197.73.115
+   User fisher
+   Hostname 167.172.244.121
    IdentityFile ~/.ssh/michaelfisher
    ForwardAgent yes
 Host *

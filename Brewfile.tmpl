@@ -1,10 +1,3 @@
-#!/bin/bash
-
-brew bundle --force cleanup --no-lock --file=/dev/stdin <<EOF
-##### NEVER DELETE THIS ROW #####
-brew "chezmoi"
-##### NEVER DELETE THIS ROW #####
-
 tap "airplanedev/tap"
 tap "hashicorp/tap"
 tap "homebrew/bundle"
@@ -15,7 +8,6 @@ tap "homebrew/cask-versions"
 tap "homebrew/core"
 tap "microsoft/mssql-release"
 tap "homebrew/cask-versions"
-brew "sshfs"
 brew "act"
 brew "adns"
 brew "assimp"
@@ -215,4 +207,3 @@ mas "Twitterrific", id: 1289378661
 mas "UTC Bar", id: 525372278
 mas "Vimari", id: 1480933944
 mas "WhatsApp", id: 1147396723
-EOF
