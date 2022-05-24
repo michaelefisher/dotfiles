@@ -68,5 +68,4 @@ fixup() { /usr/bin/git add --all && /usr/bin/git commit -m "fixup" --allow-empty
 # urldecode
 urldecode() { : "${*//+/ }"; echo -e "${_//%/\\x}"; }
 
-terraform-docs completion zsh > /usr/local/share/zsh/site-functions/_terraform-docs
 autoload -U compinit && compinit
