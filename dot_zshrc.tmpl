@@ -45,11 +45,6 @@ fi
 # uninstall by removing these lines
 [ -f ~/.config/tabtab/__tabtab.bash ] && . ~/.config/tabtab/__tabtab.bash || true
 
-# gam
-{{ if eq .chezmoi.os "darwin" -}}
-	gam() { "{{ .chezmoi.homeDir }}/{{ .gam.binary }}" "$@" ; }
-{{ end -}}
-
 # z.sh
 z() { . "{{ .chezmoi.homeDir }}/bin/z/z.sh" "$@" ; }
 
