@@ -22,7 +22,7 @@ function timestamp() {
 }
 
 {{ if eq .chezmoi.os "darwin" -}}
-if [[ -n "$(brew --prefix)/Caskroom/google-cloud-sdk/google-cloud-sdk/" ]]; then
+if [[ -f "$(brew --prefix)/Caskroom/google-cloud-sdk/google-cloud-sdk/" ]]; then
   source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
   source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
   export LDFLAGS="-L/usr/local/opt/bzip2/lib -L/usr/local/opt/zlib/lib -L/usr/local/opt/openssl@1.1/lib"
