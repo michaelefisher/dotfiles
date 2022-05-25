@@ -73,7 +73,7 @@ if "test ! -d ~/.tmux/plugins/tpm" \
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run -b '~/.tmux/plugins/tpm/tpm'
 
-{{ if eq .chezmoi.os "darwin" - }}
+{{ if eq .chezmoi.os "darwin" -}}
 set-option -g default-command "reattach-to-user-namespace -l zsh"
 bind -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "pbcopy"
 {{ end -}}
