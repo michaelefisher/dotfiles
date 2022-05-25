@@ -48,7 +48,7 @@ new
 {{ if (eq .chezmoi.os "darwin") }}
 splitw -h
 splitw -v
-{{ if else (eq .chezmoi.os "linux" }}
+{{ if else (eq .chezmoi.os "linux") }}
 split -v
 # move x clipboard into tmux paste buffer
 bind C-p run "tmux set-buffer \"$(xclip -o)\"; tmux paste-buffer"
