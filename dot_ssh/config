@@ -17,5 +17,5 @@ Host mosh
    Hostname 167.172.244.121
    IdentityFile ~/.ssh/michaelfisher
    ForwardAgent yes
-Host
+Host *
    IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
