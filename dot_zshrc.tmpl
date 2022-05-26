@@ -21,15 +21,6 @@ function timestamp() {
   date -j -f "%b %d %T %Z %Y" "${1}" "+%s"
 }
 
-{{ if eq .chezmoi.os "darwin" -}}
-if [[ -d "$(brew --prefix)/Caskroom/google-cloud-sdk/google-cloud-sdk/" ]]; then
-  source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
-  source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
-  export LDFLAGS="-L/usr/local/opt/bzip2/lib -L/usr/local/opt/zlib/lib -L/usr/local/opt/openssl@1.1/lib"
-  export CFLAGS="-I/usr/local/opt/bzip2/include -I/usr/local/opt/zlib/include -I/usr/local/opt/openssl@1.1/include -I$(xcrun --show-sdk-path)/usr/include -Wno-implicit-function-declaration"
-fi
-{{ end -}}
-
 # tabtab source for serverless package
 # uninstall by removing these lines or running `tabtab uninstall serverless`
 [ -f ${HOME}/.nvm/versions/node/v6.14.2/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash ] && . ${HOME}/.nvm/versions/node/v6.14.2/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash
@@ -65,6 +56,15 @@ export PATH="/usr/local/sbin:/usr/local/opt/openjdk/bin:$HOME/.pyenv/shims/:$HOM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+{{ if eq .chezmoi.os "darwin" -}}
+if [[ -d "$(brew --prefix)/Caskroom/google-cloud-sdk/google-cloud-sdk/" ]]; then
+  source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+  source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+  export LDFLAGS="-L/usr/local/opt/bzip2/lib -L/usr/local/opt/zlib/lib -L/usr/local/opt/openssl@1.1/lib"
+  export CFLAGS="-I/usr/local/opt/bzip2/include -I/usr/local/opt/zlib/include -I/usr/local/opt/openssl@1.1/include -I$(xcrun --show-sdk-path)/usr/include -Wno-implicit-function-declaration"
+fi
+{{ end -}}
 
 # git
 fixup() { /usr/bin/git add --all && /usr/bin/git commit -m "fixup" --allow-empty && /usr/bin/git rebase -i "$@" ; }
