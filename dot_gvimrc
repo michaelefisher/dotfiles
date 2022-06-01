@@ -1,1 +1,2 @@
-set guifont=Fira\ Code\ Light\ Regular
+set guifont=FiraCodeRoman-Regular:h15
+set lines=72 columns=225
