@@ -64,6 +64,8 @@ bind k select-pane -U
 bind l select-pane -R
 bind r source-file $HOME/.tmux.conf
 
+set -g default-terminal "xterm-256color"
+
 # Use a symlink to look up SSH authentication
 setenv -g SSH_AUTH_SOCK $HOME/.ssh/ssh_auth_sock
 
