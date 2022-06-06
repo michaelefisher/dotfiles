@@ -153,11 +153,6 @@ let g:multi_cursor_prev_key            = '<C-p>'
 let g:multi_cursor_skip_key            = '<C-x>'
 let g:multi_cursor_quit_key            = '<Esc>'
 
-" gvim/macvim
-set gfn=set gfn=Literation\ Mono\ Powerline:h14
-colo desert
-set linespace=2
-
 " Python indentation
 au BufNewFile,BufRead *.py
     \ set tabstop=4 |
@@ -236,7 +231,5 @@ map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 let g:chezmoi = "enabled"
 
-set guifont=FiraCodeRoman-Regular:h15
-set lines=72 columns=225
 " Auto-apply chezmoi
 autocmd BufWritePost ~/.local/share/chezmoi/* ! chezmoi apply --source-path "%"
