@@ -14,7 +14,7 @@ Host website-small
    ForwardAgent yes
 Host mosh
    User fisher
-   Hostname 167.172.244.121
+   Hostname mosh.mosh
    IdentityFile ~/.ssh/michaelfisher
    ForwardAgent yes
 Host *
