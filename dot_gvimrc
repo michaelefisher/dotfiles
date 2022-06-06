@@ -1,0 +1,5 @@
+" Gvimrc
+
+set guifont=FiraCodeRoman-Regular:h15
+colorscheme evening
+
