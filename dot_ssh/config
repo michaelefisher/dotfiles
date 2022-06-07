@@ -1,6 +1,3 @@
-Host * !34.?.?.?
-   UseKeychain yes
-   AddKeysToAgent yes
 Host walter
    User michael
    Hostname sshwalter.local
