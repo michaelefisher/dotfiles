@@ -1,4 +1,4 @@
-Host *
+Host * !34.?.?.?
    UseKeychain yes
    AddKeysToAgent yes
 Host walter
