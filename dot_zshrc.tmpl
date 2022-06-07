@@ -39,9 +39,6 @@ function timestamp() {
 # z.sh
 z() { . "{{ .chezmoi.homeDir }}/bin/z/z.sh" "$@" ; }
 
-# Start starship
-eval "$(starship init zsh)"
-
 bindkey -v
 bindkey '^R' history-incremental-search-backward
 bindkey "^A" vi-beginning-of-line
@@ -71,5 +68,8 @@ fixup() { /usr/bin/git add --all && /usr/bin/git commit -m "fixup" --allow-empty
 
 # urldecode
 urldecode() { : "${*//+/ }"; echo -e "${_//%/\\x}"; }
+
+# Start starship
+eval "$(starship init zsh)"
 
 autoload -U compinit && compinit
