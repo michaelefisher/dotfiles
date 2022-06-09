@@ -80,13 +80,10 @@ set -g @plugin 'seebi/tmux-colors-solarized'
 if "test ! -d ~/.tmux/plugins/tpm" \
    "run 'git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && ~/.tmux/plugins/tpm/bin/install_plugins'"
 
+set -g @colors-solarized '256'
+set -g default-command "reattach-to-user-namespace -l $SHELL"
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run -b '~/.tmux/plugins/tpm/tpm'
 
-set -g @colors-solarized '256'
 
-{{ if eq .chezmoi.os "darwin" -}}
-set-option -g default-command "reattach-to-user-namespace -l zsh"
-bind -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "pbcopy"
-{{ end -}}
 
