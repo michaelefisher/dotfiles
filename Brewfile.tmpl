@@ -153,8 +153,7 @@ brew "airplanedev/tap/airplane"
 brew "yq"
 {{ if eq .chezmoi.os "darwin" }}
 tap "buo/cask-upgrade"
-brew "macvim", link: false
-brew "iterm2"
+cask "iterm2"
 cask "calibre"
 cask "docker"
 cask "font-hack-nerd-font"
