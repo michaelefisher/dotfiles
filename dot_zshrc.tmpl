@@ -6,7 +6,7 @@ fi
 export HISTTIMEFORMAT='%d/%m/%y %T '
 export EDITOR="vim"
 
-{{ if eq chezmoi.os "darwin" }}
+{{ if eq .chezmoi.os "darwin" }}
 export SSH_AUTH_SOCK="~/Library/Group Containers/{{ .sshAgentContainer.location }}/t/agent.sock
 {{ end -}}
 
