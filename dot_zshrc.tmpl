@@ -6,11 +6,9 @@ fi
 export HISTTIMEFORMAT='%d/%m/%y %T '
 export EDITOR="vim"
 
-for key in "michaelfisher"; do
-	if [[ -s ~/.ssh/${key} ]]; then
-		ssh-add ~/.ssh/${key};
-	fi
-done
+{{ if eq chezmoi.os "darwin" }}
+export SSH_AUTH_SOCK="~/Library/Group Containers/{{ .sshAgentContainer.location }}/t/agent.sock
+{{ end -}}
 
 export GIT="$HOME/git"
 function dateu() {
@@ -63,7 +61,7 @@ if [[ -d "$(brew --prefix)/Caskroom/google-cloud-sdk/google-cloud-sdk/" ]]; then
 fi
 {{ end -}}
 
-if [[ -d $HOME/.pyenv ]]; then
+if [[ $(pyenv --version 2>&1 >/dev/null) -eq 0 ]]; then
   export PYENV_ROOT="$HOME/.pyenv"
   command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
   eval "$(pyenv init -)"
@@ -76,6 +74,8 @@ fixup() { /usr/bin/git add --all && /usr/bin/git commit -m "fixup" --allow-empty
 urldecode() { : "${*//+/ }"; echo -e "${_//%/\\x}"; }
 
 # Start starship
-eval "$(starship init zsh)"
+if [[ $(starship -V 2>&1 >/dev/null) -eq 0 ]]; then
+	eval "$(starship init zsh)"
+fi
 
 autoload -U compinit && compinit
