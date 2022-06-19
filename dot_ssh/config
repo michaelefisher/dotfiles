@@ -11,6 +11,4 @@ Host mosh
    User fisher
    Hostname mosh.mosh
    ForwardAgent yes
-Host *
-  IdentityAgent ~/.1password/agent.sock
 
