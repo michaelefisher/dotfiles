@@ -1,18 +1,15 @@
 Host walter
    User michael
    Hostname sshwalter.local
-   IdentityFile ~/.ssh/michaelfisher
    ForwardAgent yes
    RemoteForward 52698 localhost:52698
 Host website-small
    User michael
    Hostname michaelfisher.org
-   IdentityFile ~/.ssh/michaelfisher
    ForwardAgent yes
 Host mosh
    User fisher
    Hostname mosh.mosh
-   IdentityFile ~/.ssh/michaelfisher
    ForwardAgent yes
 Host *
   IdentityAgent ~/.1password/agent.sock
