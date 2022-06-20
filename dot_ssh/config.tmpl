@@ -13,8 +13,9 @@ Host mosh
    ForwardAgent yes
 Host cookie-monster
    User fisher
-   Hostname 10.150.0.4
+   Hostname compute.1305866899489449165
    StrictHostKeyChecking no
+   ProxyUseFdpass=no
    ProxyCommand /usr/local/bin/python3 -S /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/lib/gcloud.py compute start-iap-tunnel cookie-monster-1
    IdentitiesOnly yes
 {{- if eq .chezmoi.os "darwin" }}
