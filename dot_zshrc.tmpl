@@ -57,11 +57,9 @@ if [[ -d "$(brew --prefix)/Caskroom/google-cloud-sdk/google-cloud-sdk/" ]]; then
 fi
 {{ end -}}
 
-if [[ "$(pyenv --version 2>&1 >/dev/null)" -eq 0 ]]; then
-  export PYENV_ROOT="$HOME/.pyenv"
-  command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-  eval "$(pyenv init -)"
-fi
+export PYENV_ROOT="$HOME/.pyenv"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 # git
 fixup() { /usr/bin/git add --all && /usr/bin/git commit -m "fixup" --allow-empty && /usr/bin/git rebase -i "$@" ; }
@@ -70,8 +68,6 @@ fixup() { /usr/bin/git add --all && /usr/bin/git commit -m "fixup" --allow-empty
 urldecode() { : "${*//+/ }"; echo -e "${_//%/\\x}"; }
 
 # Start starship
-if [[ "$(starship -V 2>&1 >/dev/null)" -eq 0 ]]; then
-	eval "$(starship init zsh)"
-fi
+eval "$(starship init zsh)"
 
 autoload -U compinit && compinit
