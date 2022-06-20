@@ -14,11 +14,11 @@ Host mosh
 Host cookie-monster
    User fisher
    Hostname compute.1305866899489449165
-
-.ssh/google_compute_engine
+   UserKnownHostsFile ~/.ssh/google_compute_known_hosts
+   IdentityFile ~/.ssh/google_compute_engine
    StrictHostKeyChecking no
-   ProxyUseFdpass=no
-   ProxyCommand /usr/local/bin/python3 -S /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/lib/gcloud.py compute start-iap-tunnel
+   ProxyUseFdpass no
+   ProxyCommand /usr/local/bin/python3 -S /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/lib/gcloud.py compute start-iap-tunnel cookie-monster-1 %p --listen-on-stdin --project=cookie-monster-vms --zone=us-east4-b --verbosity=warning
    IdentitiesOnly yes
 {{- if eq .chezmoi.os "darwin" }}
 Host *
