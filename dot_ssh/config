@@ -11,4 +11,8 @@ Host mosh
    User fisher
    Hostname mosh.mosh
    ForwardAgent yes
+{{ if eq .chezmoi.os "darwin" }}
+Host *
+   IdentityAgent "~/Library/Group Containers/{{ .sshagentcontainer.location }}/t/agent.sock"
+{{ end -}}
 
