@@ -17,6 +17,7 @@ Host cookie-monster
    UserKnownHostsFile ~/.ssh/google_compute_known_hosts
    IdentityFile ~/.ssh/google_compute_engine
    StrictHostKeyChecking no
+   AllowTcpForwarding yes
    ProxyUseFdpass no
    ProxyCommand gcloud compute start-iap-tunnel cookie-monster-vms-rqhx %p --listen-on-stdin --project=cookie-monster-vms --zone=us-east4-b --verbosity=warning
    IdentitiesOnly yes
