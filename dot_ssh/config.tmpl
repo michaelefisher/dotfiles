@@ -18,7 +18,7 @@ Host cookie-monster
    UserKnownHostsFile ~/.ssh/google_compute_known_hosts
    IdentityFile ~/.ssh/google_compute_engine
    ProxyUseFdpass no
-   ProxyCommand gcloud compute start-iap-tunnel cookie-monster-vms-rqhx %p --listen-on-stdin --project=cookie-monster-vms --zone=us-east4-b --verbosity=warning
+   ProxyCommand gcloud --configuration=personal compute start-iap-tunnel cookie-monster-vms-rqhx %p --listen-on-stdin --project=cookie-monster-vms --zone=us-east4-b --verbosity=warning
    IdentitiesOnly yes
 {{- if eq .chezmoi.os "darwin" }}
 Host *
