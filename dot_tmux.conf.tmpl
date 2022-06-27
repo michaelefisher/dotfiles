@@ -49,6 +49,8 @@ new
 {{ if (eq .chezmoi.os "darwin") }}
 splitw -h
 splitw -v
+# move tmux copy buffer into x clipboard
+bind C-y run "tmux show-buffer | pbcopy"
 {{ else if (eq .chezmoi.os "linux") }}
 split -h
 # move x clipboard into tmux paste buffer
