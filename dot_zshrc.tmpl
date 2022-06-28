@@ -67,6 +67,9 @@ fixup() { /usr/bin/git add --all && /usr/bin/git commit -m "fixup" --allow-empty
 # urldecode
 urldecode() { : "${*//+/ }"; echo -e "${_//%/\\x}"; }
 
+# 1Password CLI
+cta() { eval $(op signin) }
+
 # Start starship
 eval "$(starship init zsh)"
 
