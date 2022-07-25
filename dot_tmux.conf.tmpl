@@ -46,11 +46,10 @@ set -g message-style 'fg=colour232 bg=colour16 bold'
 
 # Create new session, split single vertically and horizontally
 new
-{{ if (eq .chezmoi.os "darwin") }}
+{{- if (eq .chezmoi.os "darwin") }}
 splitw -h
 splitw -v
-{{ else if (eq .chezmoi.os "linux") }}
-split -h
+{{- else if (eq .chezmoi.os "linux") }}
 # move x clipboard into tmux paste buffer
 bind C-p run "tmux set-buffer \"$(xclip -o)\"; tmux paste-buffer"
 # move tmux copy buffer into x clipboard

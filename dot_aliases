@@ -40,20 +40,12 @@ alias fh="find . -name $1"
 # chrome with corb disabled
 alias chrome="open /Applications/Google\ Chrome.app --args --disable-features=BypassCorbOnlyForExtensionsAllowlist --enable-features=NetworkService"
 
-# streak deploy stuff
-# Usage: deploy update
-alias deploy="deploy $1"
-
-# ansible local
-# Usage: ansible kermit-the-frog or ansible `whoami`
-alias ansible="pipenv run roles/common/main.yml -i hosts.yml -l $1"
-
 # dockerized psql
 if [[ `docker info > /dev/null 2>&1` -eq 0 ]]; then
 	alias pg="docker run -it --rm postgres psql -h host.docker.internal --set=sslmode=require"
 fi
 
 alias flushcache="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
-alias cta='eval $(op signin communitytechalliance)'
-alias fisher='eval $(op signin firstandtwentieth)'
-alias beezers='eval $(op signin beezers)'
+alias cta='eval $(op signin --account communitytechalliance.1password.com)'
+alias fisher='eval $(op signin --account firstandtwentieth.1password.com)'
+alias beezers='eval $(op signin --account beezers.1password.com)'

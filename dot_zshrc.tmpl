@@ -1,6 +1,6 @@
 ## aliases
 if [ -f ~/.aliases ]; then
-    . ~/.aliases
+    source ~/.aliases
 fi
 
 export HISTTIMEFORMAT='%d/%m/%y %T '
@@ -69,5 +69,8 @@ urldecode() { : "${*//+/ }"; echo -e "${_//%/\\x}"; }
 
 # Start starship
 eval "$(starship init zsh)"
+
+# Export Google Impersonate Service Account
+[[ -n $TF_ADMIN ]] && export GOOGLE_IMPERSONATE_SERVICE_ACCOUNT=terraform@$TF_ADMIN.iam.gserviceaccount.com
 
 autoload -U compinit && compinit
