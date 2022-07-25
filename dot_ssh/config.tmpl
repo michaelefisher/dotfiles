@@ -14,11 +14,10 @@ Host cookie-monster-mosh
    ForwardAgent yes
 Host cookie-monster
    User fisher
-   Hostname compute.1550161667170270321
    UserKnownHostsFile ~/.ssh/google_compute_known_hosts
    IdentityFile ~/.ssh/google_compute_engine
    ProxyUseFdpass no
-   ProxyCommand gcloud compute start-iap-tunnel cookie-monster-vms-rqhx %p --listen-on-stdin --project=cookie-monster-vms --zone=us-east4-b --verbosity=warning
+   ProxyCommand gcloud compute start-iap-tunnel cookie-monster-vm %p --listen-on-stdin --project=cookie-monster-vms --zone=us-central1-a --verbosity=warning
    IdentitiesOnly yes
 {{- if eq .chezmoi.os "darwin" }}
 Host *
