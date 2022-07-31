@@ -1,0 +1,35 @@
+0000000000000000000000000000000000000000 91910cea1a2f7fd8565668e5d6a28c1f642f7e8c Michael Fisher <fisher@abbey.local> 1655658775 -0400	clone: from https://github.com/michaelefisher/dotfiles.git
+91910cea1a2f7fd8565668e5d6a28c1f642f7e8c 1a814f5cef630276826cb56ce166b4c1b599f6bb Michael Fisher <fisher@techallies.org> 1655659325 -0400	commit: Update .chezmoiexternal.toml
+1a814f5cef630276826cb56ce166b4c1b599f6bb cfcbb0de3c68d7d9a0b9feff2ffa94c05b195515 Michael Fisher <fisher@techallies.org> 1655659605 -0400	commit: Update dot_ssh/config
+cfcbb0de3c68d7d9a0b9feff2ffa94c05b195515 21a45da870c4737702016f52d39654a59df16c70 Michael Fisher <fisher@techallies.org> 1655659661 -0400	commit: Update .chezmoiexternal.toml
+21a45da870c4737702016f52d39654a59df16c70 59080a075161bb3a758397a869a3cc435f17d171 Michael Fisher <fisher@techallies.org> 1655670177 -0400	commit: Update dot_zshrc.tmpl
+59080a075161bb3a758397a869a3cc435f17d171 299a304c5ff04f5a257ad6f8d27607f9873414c2 Michael Fisher <fisher@techallies.org> 1655674912 -0400	commit: Update Brewfile.tmpl
+299a304c5ff04f5a257ad6f8d27607f9873414c2 e3349774e36aa0135678efd534891a4ad36f2c32 Michael Fisher <fisher@techallies.org> 1655675060 -0400	commit: Update dot_ssh/config
+e3349774e36aa0135678efd534891a4ad36f2c32 0a437af6ed6a24192057c12cefa103062f4a12b5 Michael Fisher <fisher@techallies.org> 1655675720 -0400	commit: Update dot_zshrc.tmpl
+0a437af6ed6a24192057c12cefa103062f4a12b5 c7d716e106184025a63ad1be2c7174d46d142c2f Michael Fisher <fisher@techallies.org> 1655675743 -0400	commit: Update dot_zshrc.tmpl
+c7d716e106184025a63ad1be2c7174d46d142c2f 1a9fce992237c07c940fb19eb63da09d0619a959 Michael Fisher <fisher@techallies.org> 1655675806 -0400	commit: Update dot_zshrc.tmpl
+1a9fce992237c07c940fb19eb63da09d0619a959 9a0a356ea2ce88aafa0fb0f1362c0404a8c44789 Michael Fisher <fisher@techallies.org> 1655675886 -0400	commit: Update dot_zshrc.tmpl
+9a0a356ea2ce88aafa0fb0f1362c0404a8c44789 21e6b4a3368f4cf24c2a6d3ade58c33c607bac95 Michael Fisher <fisher@techallies.org> 1655676008 -0400	commit: Update dot_zshrc.tmpl
+21e6b4a3368f4cf24c2a6d3ade58c33c607bac95 bc02816e7f542ff73bd3da216c66d18f8c73d739 Michael Fisher <fisher@techallies.org> 1655676072 -0400	commit: Update dot_zshrc.tmpl
+bc02816e7f542ff73bd3da216c66d18f8c73d739 24be37a791656566f9baa81da2b5607b737c917d Michael Fisher <fisher@techallies.org> 1655676103 -0400	commit: Update dot_zshrc.tmpl
+24be37a791656566f9baa81da2b5607b737c917d 02f5a74b569b92db26f2f6929938ab9bc2338305 Michael Fisher <fisher@techallies.org> 1655688251 -0400	commit: Update dot_ssh/config
+02f5a74b569b92db26f2f6929938ab9bc2338305 0217776d8befb57993c4c24cbca753e98ed0abd9 Michael Fisher <fisher@techallies.org> 1655688445 -0400	commit: Rename dot_ssh/config to dot_ssh/config.tmpl
+0217776d8befb57993c4c24cbca753e98ed0abd9 69c4cca4c215506d36b0edcef374d09f8d4aee14 Michael Fisher <fisher@techallies.org> 1655688568 -0400	commit: Update Brewfile.tmpl
+69c4cca4c215506d36b0edcef374d09f8d4aee14 3c628672dfcee69b8b4a4effaf05a9f4b25d7b38 Michael Fisher <fisher@techallies.org> 1655694908 -0400	commit: Update dot_ssh/config.tmpl
+3c628672dfcee69b8b4a4effaf05a9f4b25d7b38 761bd850961e4ac8b3619d1a87a61186fa84c9ea Michael Fisher <fisher@techallies.org> 1655694984 -0400	commit: Update dot_ssh/config.tmpl
+761bd850961e4ac8b3619d1a87a61186fa84c9ea 4044b3a63a45fe7ba4e82eaf975b55de804f3876 Michael Fisher <fisher@techallies.org> 1655695223 -0400	commit: Update dot_ssh/config.tmpl
+4044b3a63a45fe7ba4e82eaf975b55de804f3876 97beb5c82a3d8717ae5c34f5a5c3f123a6441c63 Michael Fisher <fisher@techallies.org> 1655695252 -0400	commit: Update dot_ssh/config.tmpl
+97beb5c82a3d8717ae5c34f5a5c3f123a6441c63 5de2c090fa2f83b861ea10d2a480fb9c33851315 Michael Fisher <fisher@techallies.org> 1655695525 -0400	commit: Update dot_ssh/config.tmpl
+5de2c090fa2f83b861ea10d2a480fb9c33851315 0a500dc0d82e4f43fe71e6480dd891e42e161a2e Michael Fisher <fisher@techallies.org> 1655695585 -0400	commit: Update dot_ssh/config.tmpl
+0a500dc0d82e4f43fe71e6480dd891e42e161a2e 227daaf038862ab83f59f1ed9afa8f98bb789382 Michael Fisher <fisher@techallies.org> 1655698787 -0400	commit: Update dot_ssh/config.tmpl
+227daaf038862ab83f59f1ed9afa8f98bb789382 84043f67787d1227a5c18c009d2b4d5eaf8239f9 Michael Fisher <fisher@techallies.org> 1655698799 -0400	merge refs/remotes/origin/main: Merge made by the 'ort' strategy.
+84043f67787d1227a5c18c009d2b4d5eaf8239f9 d38c537a8839e9629d4a47868b4baa96b59ad8d4 Michael Fisher <fisher@techallies.org> 1655699047 -0400	commit: Update dot_ssh/config.tmpl
+d38c537a8839e9629d4a47868b4baa96b59ad8d4 3ba171ecd37ee0bfb861c2cf007a357078456ad9 Michael Fisher <fisher@techallies.org> 1655769976 -0400	pull --rebase --recurse-submodules: Fast-forward
+3ba171ecd37ee0bfb861c2cf007a357078456ad9 75277c0d6c99d0a5a4caf58f3f8f5b2b6c409e4b Michael Fisher <fisher@techallies.org> 1655899693 -0400	pull --rebase --recurse-submodules: Fast-forward
+75277c0d6c99d0a5a4caf58f3f8f5b2b6c409e4b a4d187ed5e7d3cc5f18e6fd8758a2557bc6483f9 Michael Fisher <fisher@techallies.org> 1655899817 -0400	commit: Update dot_ssh/config.tmpl
+a4d187ed5e7d3cc5f18e6fd8758a2557bc6483f9 f43d4019e2a172be8e4e32f6aed0be0e98e49625 Michael Fisher <fisher@techallies.org> 1655902467 -0400	commit: Update dot_ssh/config.tmpl
+f43d4019e2a172be8e4e32f6aed0be0e98e49625 08fbfdb9fc9d4849df882b2f9148d21e5bc8ac7b Michael Fisher <fisher@techallies.org> 1658713114 -0400	commit: Update dot_ssh/config.tmpl
+08fbfdb9fc9d4849df882b2f9148d21e5bc8ac7b 35570e599f09f82b62b11e63ab123218148ba5b2 Michael Fisher <fisher@techallies.org> 1658713162 -0400	commit (merge): Update Brewfile.tmpl
+35570e599f09f82b62b11e63ab123218148ba5b2 827843914ba4c01c339720c2332e61a6a0781451 Michael Fisher <fisher@techallies.org> 1659273902 -0400	pull --rebase --recurse-submodules: Fast-forward
+827843914ba4c01c339720c2332e61a6a0781451 53863a0f0c6263093e021dd44104ab651b94c86e Michael Fisher <fisher@techallies.org> 1659303665 -0400	commit: Add executable_bootstrap.sh
+53863a0f0c6263093e021dd44104ab651b94c86e e5697929156cf7718fb4398447e301841616f398 Michael Fisher <fisher@techallies.org> 1659303924 -0400	commit: Remove executable_bootstrap.sh
