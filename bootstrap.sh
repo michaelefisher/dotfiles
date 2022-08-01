@@ -31,7 +31,9 @@ apt-get -y install \
 # Download and install Starship
 sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
 
-cat<<EOF > ~/.config/chezmoi/chezmoi.toml
+mkdir -p $HOME/.config/chezmoi/chezmoi.toml
+touch $HOME/.config/chezmoi/chezmoi.toml
+cat<<EOF > $HOME/.config/chezmoi/chezmoi.toml
 [data]
 email = "fisher@techallies.org"
 python.version = "3.9.1"
@@ -53,3 +55,5 @@ tar -xf google-cloud-cli-395.0.0-linux-x86.tar.gz
 
 export CLOUDSDK_CONFIG=$HOME/.gcloud
 
+usermod -s /etc/zsh $USER
+zsh
