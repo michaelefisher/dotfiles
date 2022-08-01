@@ -15,8 +15,8 @@ sudo mkdir -p /usr/share/debsig/keyrings/AC2D62742012EA22
 curl -sS https://downloads.1password.com/linux/keys/1password.asc | \
  sudo gpg --dearmor --output /usr/share/debsig/keyrings/AC2D62742012EA22/debsig.gpg
 
-apt-get update
-apt-get -y install \
+sudo apt-get update
+sudo apt-get -y install \
   gcc \
   cmake \
   python3.9-dev \
@@ -31,7 +31,7 @@ apt-get -y install \
 # Download and install Starship
 sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
 
-mkdir -p $HOME/.config/chezmoi/chezmoi.toml
+mkdir -p $HOME/.config/chezmoi
 touch $HOME/.config/chezmoi/chezmoi.toml
 cat<<EOF > $HOME/.config/chezmoi/chezmoi.toml
 [data]
@@ -49,11 +49,11 @@ GITHUB_USERNAME=michaelefisher
 sh -c "$(curl -fsLS https://chezmoi.io/get)" -- init --one-shot -k --apply $GITHUB_USERNAME
 
 # Install gcloud cli
-curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-395.0.0-linux-x86_64.tar.gz
-tar -xf google-cloud-cli-395.0.0-linux-x86.tar.gz
+wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-395.0.0-linux-x86_64.tar.gz
+tar -xvf google-cloud-cli*
 ./google-cloud-sdk/install.sh -q --screen-reader false
 
 export CLOUDSDK_CONFIG=$HOME/.gcloud
 
-usermod -s /etc/zsh $USER
+sudo usermod -s /etc/zsh $USER
 zsh
