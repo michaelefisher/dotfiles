@@ -56,4 +56,3 @@ tar -xvf google-cloud-cli*
 export CLOUDSDK_CONFIG=$HOME/.gcloud
 
 sudo usermod -s /etc/zsh $USER
-zsh
