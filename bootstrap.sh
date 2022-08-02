@@ -54,6 +54,6 @@ tar -xvf google-cloud-cli*
 ./google-cloud-sdk/install.sh -q --screen-reader false
 
 export CLOUDSDK_CONFIG=$HOME/.gcloud
-export PATH=$HOME/google-cloud-sdk/bin:$PATH
+export PATH=$HOME/google-cloud-sdk/bin:$HOME/bin:$PATH
 
 sudo usermod -s /etc/zsh $USER
