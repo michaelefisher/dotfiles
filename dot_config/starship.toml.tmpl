@@ -5,7 +5,7 @@ add_newline = true
 format="$all$directory$character"
 {{ else if eq .chezmoi.os "Linux" }}
 format="$directory$character"
-{{ end }}
+{{ end -}}
 
 [aws]
 disabled = true
