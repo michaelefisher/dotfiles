@@ -1,11 +1,11 @@
 # Inserts a blank line between shell prompts
 add_newline = true
 
-{{- if eq .chezmoi.os "darwin" -}}
+{{ if eq .chezmoi.os "darwin" }}
 format="$all$directory$character"
 {{ else if eq .chezmoi.os "Linux" }}
 format="$directory$character"
-{{ end -}}
+{{ end }}
 
 [aws]
 disabled = true
