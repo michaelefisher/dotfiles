@@ -1,7 +1,11 @@
 # Inserts a blank line between shell prompts
 add_newline = true
 
-#format="$all$directory$character"
+{{- if eq .chezmoi.os "darwin" -}}
+format="$all$directory$character"
+{{ else }}
+format="$directory$character"
+{{ end -}}
 
 [aws]
 disabled = true
