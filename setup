@@ -34,23 +34,13 @@ sudo apt-get -y install \
 # Download and install Starship
 sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
 
-mkdir -p $HOME/.config/chezmoi
-touch $HOME/.config/chezmoi/chezmoi.toml
-cat<<EOF > $HOME/.config/chezmoi/chezmoi.toml
-[data]
-email = "fisher@techallies.org"
-python.version = "3.9.1"
-sshAgentContainer.location = "2BUA8C4S2C.com.1password"
-[git]
-autoCommit = true
-autoPush = true
-[editor]
-command = "vim"
-EOF
+CHEZMOI_DIR=/.local/share/chezmoi
+rm -rf $CHEZMOI_DIR
 
 GITHUB_USERNAME=michaelefisher
+
 sh -c "$(curl -fsLS https://chezmoi.io/get)"
-chezmoi init --aply $GITHUB_USERNAME -k --config chezmoi.toml
+$HOME/bin/chezmoi init --apply https://github.com/$GITHUB_USERNAME/dotfiles.git -k --config chezmoi.toml
 
 # Install gcloud cli
 wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-395.0.0-linux-x86_64.tar.gz
