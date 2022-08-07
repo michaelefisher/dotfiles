@@ -49,7 +49,7 @@ command = "vim"
 EOF
 
 GITHUB_USERNAME=michaelefisher
-sh -c "$(curl -fsLS https://chezmoi.io/get)" -- init $GITHUB_USERNAME --one-shot -k
+sh -c "$(curl -fsLS https://chezmoi.io/get)" -- init $GITHUB_USERNAME --one-shot -k --config chezmoi.toml
 
 # Install gcloud cli
 wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-395.0.0-linux-x86_64.tar.gz
