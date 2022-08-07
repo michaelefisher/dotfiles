@@ -5,16 +5,16 @@
 {{-   $email = promptString "email" -}}
 {{- end -}}
 
-{{- $version := "" -}}
-{{- if hasKey . "version" -}}
-{{-   $version = "3.9.1" -}}
+{{- $pythonVersion := "" -}}
+{{- if hasKey . "pythonVersion" -}}
+{{-   $pythonVersion = "3.9.1" -}}
 {{- else -}}
-{{-   $version = promptString "version" -}}
+{{-   $pythonVersion = promptString "pythonVersion" -}}
 {{- end -}}
 
 [data]
     email = {{ $email | quote }}
-    python.version = {{ $version | quote }}
+    pythonVersion = {{ $pythonVersion | quote }}
 [git]
     autoCommit = true
     autoPush = true
