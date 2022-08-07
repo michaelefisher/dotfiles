@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
-# This script only runs in the Google Cloud Shell environment
+if [[ $(uname) == "Darwin" ]]; then
+  echo -e "This only runs on Linux.\n\nExiting without taking action."
+  exit 0;
+fi
 
 curl -sS https://downloads.1password.com/linux/keys/1password.asc | \
  sudo gpg --dearmor --output /usr/share/keyrings/1password-archive-keyring.gpg
