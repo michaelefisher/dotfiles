@@ -1,6 +1,6 @@
 [data]
 email = "fisher@techallies.org"
-version = "3.9.1"
+pythonVersion = "3.9.1"
 sshAgentContainer.location = "2BUA8C4S2C.com.1password"
 [git]
 autoCommit = true
