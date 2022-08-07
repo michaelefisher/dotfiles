@@ -1,13 +1,13 @@
 {{- $email := "" -}}
 {{- if hasKey . "email" -}}
-{{-   $email = .email -}}
+{{-   $email = "fishermichaele@gmail.com" -}}
 {{- else -}}
 {{-   $email = promptString "email" -}}
 {{- end -}}
 
 {{- $version := "" -}}
 {{- if hasKey . "version" -}}
-{{-   $version = .version -}}
+{{-   $version = "3.9.1" -}}
 {{- else -}}
 {{-   $version = promptString "version" -}}
 {{- end -}}
