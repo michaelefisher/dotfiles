@@ -67,6 +67,9 @@ fixup() { /usr/bin/git add --all && /usr/bin/git commit -m "fixup" --allow-empty
 # urldecode
 urldecode() { : "${*//+/ }"; echo -e "${_//%/\\x}"; }
 
+# view octal
+octal() { stat -f "%OLp" $1; }
+
 # Start starship
 eval "$(starship init zsh)"
 
