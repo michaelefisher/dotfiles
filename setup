@@ -11,7 +11,6 @@ if [[ $(uname) == "Darwin" ]]; then
   exit 1;
 else
   echo -e "Continuing with setup on Linux..."
-  exit 0;
 fi
 
 curl -sS https://downloads.1password.com/linux/keys/1password.asc | \
