@@ -1,11 +1,16 @@
 #!/usr/bin/env bash
 
+start=`date +%s`
+
 if [[ -n "$USER" && "$USER" == "gitpod" ]]; then
   DOTFILES_PATH="$HOME/.dotfiles/"
 fi
 
 if [[ $(uname) == "Darwin" ]]; then
   echo -e "This only runs on Linux.\n\nExiting without taking action."
+  exit 1;
+else
+  echo -e "Continuing with setup on Linux..."
   exit 0;
 fi
 
@@ -55,3 +60,8 @@ export CLOUDSDK_CONFIG=$HOME/.gcloud
 export PATH=$HOME/google-cloud-sdk/bin:$HOME/bin:$PATH
 
 sudo usermod -s /etc/zsh $USER
+
+end=`date +%s`
+runtime=$((end-start))
+
+echo "Runtime in seconds: ${runtime}"
