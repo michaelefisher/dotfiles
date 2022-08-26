@@ -1,5 +1,7 @@
 " Gvimrc
 
-set guifont=FiraCodeRoman-Regular:h15
+set guifont=FiraCodeRoman:h14
 colorscheme evening
+set lines=81
+set columns=225
 
