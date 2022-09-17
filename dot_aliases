@@ -49,3 +49,6 @@ alias flushcache="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 alias cta='eval $(op signin --account communitytechalliance.1password.com)'
 alias fisher='eval $(op signin --account firstandtwentieth.1password.com)'
 alias beezers='eval $(op signin --account beezers.1password.com)'
+
+# gcloud cli
+alias adc="gcloud auth login --update-adc"
