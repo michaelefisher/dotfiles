@@ -2,27 +2,6 @@
 
 start=`date +%s`
 
-if [[ -n "$USER" && "$USER" == "gitpod" ]]; then
-  DOTFILES_PATH="$HOME/.dotfiles/"
-fi
-
-if [[ $(uname) == "Darwin" ]]; then
-  echo -e "This only runs on Linux.\n\nExiting without taking action."
-  exit 1;
-else
-  echo -e "Continuing with setup on Linux..."
-fi
-
-sudo apt-get update
-sudo apt-get -y install \
-  gcc \
-  cmake \
-  libssl-dev \
-  make \
-  libutempter-dev \
-  zlib1g-dev \
-  zsh
-
 # Download and install Starship
 sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
 
@@ -34,13 +13,13 @@ rm -rf $CHEZMOI_DIR
 sh -c "$(curl -fsLS https://chezmoi.io/get)"
 $HOME/bin/chezmoi init --apply https://github.com/$GITHUB_USERNAME/dotfiles.git -k --config $DOTFILES_PATH/chezmoi.toml
 
-# Install gcloud cli
-wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-395.0.0-linux-x86_64.tar.gz
-tar -xvf google-cloud-cli*
-./google-cloud-sdk/install.sh -q --screen-reader false
+# # Install gcloud cli
+# wget https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-cli-395.0.0-linux-x86_64.tar.gz
+# tar -xvf google-cloud-cli*
+# ./google-cloud-sdk/install.sh -q --screen-reader false
 
-export CLOUDSDK_CONFIG=$HOME/.gcloud
-export PATH=$HOME/google-cloud-sdk/bin:$HOME/bin:$PATH
+# export CLOUDSDK_CONFIG=$HOME/.gcloud
+# export PATH=$HOME/google-cloud-sdk/bin:$HOME/bin:$PATH
 
 end=`date +%s`
 runtime=$((end-start))
