@@ -2,6 +2,10 @@
 
 start=`date +%s`
 
+if [[ -n "$USER" && "$USER" == "gitpod" ]]; then
+  DOTFILES_PATH="$HOME/.dotfiles/"
+fi
+
 # Download and install Starship
 sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
 
