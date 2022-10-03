@@ -26,3 +26,14 @@
 	process = git-lfs filter-process
 [help]
 	autocorrect = 1
+{{ if eq .chezmoi.os "darwin" }}
+[user]
+  signingkey = ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC2owcpGR5YNKZh8iNfdyg6M/Tgmmmfr+lTbJG8ZjRHppLs1sCl/Uc+s9sfLMYzuvGz20oxICs/CtdViaYdw+mYNNa86XYJ6enbDythkCGeMYUKZZiis9XJ/E9+y/DtvVvdUaHeUyAqyGNgfN/4LXPEOUGRQiAraKt6a4wu8Rod4pUO8GgHPvXA34kqlzK6MutiRrtVimasGaMNYiKrptf3yrsWtw8DLmXsNocqZGXrYk4lHB+AMRjHbh25X17wHjKzvzZUSp+beM8Vj5rzxkzxDgcuXUoGCI3H3VlXRZ4JD9Ey/66a1WFAOltckszrMmoQPfBSMUJFUUXmpvufViM5
+[gpg]
+  format = ssh
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+[commit]
+  gpgsign = true
+{{ end }}
+
