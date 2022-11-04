@@ -42,7 +42,7 @@ bindkey "^E" vi-end-of-line
 {{ if eq .chezmoi.os "linux" -}}
 export PATH="/usr/local/sbin:/usr/local/opt/openjdk/bin:$HOME/.pyenv/shims/:$HOME/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/bin:$HOME/bin:$HOME/google-cloud-sdk/bin:$PATH"
 {{ else }}
-export PATH="/usr/local/sbin:/usr/local/opt/openjdk/bin:$HOME/.pyenv/shims/:$HOME/bin/:/opt/homebrew/bin/:$PATH"
+export PATH="/usr/local/sbin:/usr/local/opt/openjdk/bin:$HOME/.pyenv/shims/:$HOME/bin/:/opt/homebrew/bin/:$HOME/go/bin:$PATH"
 {{ end }}
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
