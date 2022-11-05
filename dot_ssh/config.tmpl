@@ -3,17 +3,10 @@ Host walter
    Hostname sshwalter.local
    ForwardAgent yes
    RemoteForward 52698 localhost:52698
-Host website-small
-   User michael
-   Hostname michaelfisher.org
-   ForwardAgent yes
 Host cookie-monster
    User fisher
-   UserKnownHostsFile ~/.ssh/google_compute_known_hosts
-   IdentityFile ~/.ssh/google_compute_engine
-   ProxyUseFdpass no
-   ProxyCommand gcloud compute start-iap-tunnel cookie-monster-vms-hlgz %p --listen-on-stdin --project=cookie-monster-vms --zone=us-central1-a --verbosity=warning
-   IdentitiesOnly yes
+   Hostname docker.michaelfisher.org
+   ForwardAgent yes
 {{- if eq .chezmoi.os "darwin" }}
 Host *
   IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
