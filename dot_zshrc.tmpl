@@ -93,3 +93,7 @@ alias octavia="docker run -i --rm -v \$(pwd):/home/octavia-project --network hos
 export GITHUB_TOKEN="$(echo "op://Engineering/GitHub PAT Airbyte dbt/credential" | op inject)"
 export HMAC_KEY_SECRET="$(echo "op://Engineering/Airbyte Prod GCS HMAC/credential" | op inject)"
 export HMAC_KEY_ACCESS_ID="$(echo "op://Engineering/Airbyte Prod GCS HMAC/username" | op inject)"
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
