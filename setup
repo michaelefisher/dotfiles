@@ -28,4 +28,4 @@ $HOME/bin/chezmoi init --apply https://github.com/$GITHUB_USERNAME/dotfiles.git 
 end=`date +%s`
 runtime=$((end-start))
 
-echo "Runtime in seconds: ${runtime}"
+printf 'Runtime in seconds: %s' "$runtime"
