@@ -4,7 +4,7 @@ add_newline = true
 {{ if eq .chezmoi.os "darwin" }}
 format="$all$directory$character"
 {{ else if eq .chezmoi.os "linux" }}
-format="$directory$git_status$gcloud$character"
+format="$directory$git_status$character"
 {{ end }}
 
 [aws]
