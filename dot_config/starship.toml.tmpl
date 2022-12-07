@@ -3,7 +3,7 @@ add_newline = true
 
 {{ if eq .chezmoi.os "Darwin" }}
 format="$all$directory$character"
-{{ else if eq .chezmoi.os "linux" }}
+{{ else if eq .chezmoi.os "Linux" }}
 format="""
 $git_status\
 {{ end }}
