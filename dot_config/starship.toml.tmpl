@@ -1,11 +1,10 @@
 # Inserts a blank line between shell prompts
 add_newline = true
 
-{{ if eq .chezmoi.os "Darwin" }}
+{{ if eq .chezmoi.os "darwin" }}
 format="$all$directory$character"
-{{ else if eq .chezmoi.os "Linux" }}
-format="""
-$git_status\
+{{ else if eq .chezmoi.os "linux" }}
+format="$gcloud$terraform$git_status$directory$character"
 {{ end }}
 
 [aws]
