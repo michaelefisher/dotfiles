@@ -4,7 +4,13 @@ add_newline = true
 {{ if eq .chezmoi.os "darwin" }}
 format="$all$directory$character"
 {{ else if eq .chezmoi.os "linux" }}
-format="$username$hostname$gcloud$terraform$git_status$directory$character"
+format="""$username\
+$hostname\
+$gcloud\
+$terraform\
+$git_status\
+$directory\
+$character"""
 {{ end }}
 
 [aws]
@@ -16,7 +22,7 @@ diverged = "⇕⇡${ahead_count}⇣${behind_count}"
 behind = "⇣${count}"
 
 [gcloud]
-format = 'on [$symbol$account(@$domain)(\($project\))]($style)  '
+format = 'on [$symbol$account(@$domain)(\($project\))]($style) '
 
 [memory_usage]
 disabled = false
