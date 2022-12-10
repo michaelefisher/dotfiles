@@ -4,17 +4,19 @@ add_newline = true
 {{ if eq .chezmoi.os "darwin" }}
 format="$all$directory$character"
 {{ else if eq .chezmoi.os "linux" }}
-format="""$username\
-$hostname\
+format="""$directory\
 $gcloud\
 $terraform\
 $git_status\
-$directory\
 $character"""
 {{ end }}
 
 [aws]
 disabled = true
+
+[character]
+success_symbol = "[➜](bold green) "
+error_symbol = "[✗](bold red) "
 
 [git_status]
 ahead = "⇡${count}"
