@@ -1,4 +1,10 @@
 {{ if eq .chezmoi.os "linux" }}
+set -g update-environment "DISPLAY SSH_ASKPASS SSH_AGENT_PID \
+                             SSH_CONNECTION WINDOWID XAUTHORITY"
+
+# Use a symlink to look up SSH authentication
+setenv -g SSH_AUTH_SOCK $HOME/.ssh/ssh_auth_sock
+
 bind c new-window -c "#{pane_current_path}"
 
 set -g status-keys vi
@@ -37,70 +43,6 @@ bind-key -T copy-mode-vi 'V' send -X rectangle-toggle
 bind-key -T copy-mode-vi 'y' send -X copy-selection
 bind-key -T copy-mode-vi Enter send -X copy-selection
 bind p paste-buffer
-{{ else }}
-set -g mouse on
-# Remove SSH_AUTH_SOCK to disable tmux automatically resetting the variable
-set -g update-environment "DISPLAY SSH_ASKPASS SSH_AGENT_PID \
-                             SSH_CONNECTION WINDOWID XAUTHORITY"
-set -g default-terminal "xterm-256color"
-
-
-######################
-### DESIGN CHANGES ###
-######################
-
-# loud or quiet?
-set -g visual-activity off
-set -g visual-bell off
-set -g visual-silence off
-setw -g monitor-activity off
-set -g bell-action none
-
-#  modes
-setw -g clock-mode-colour colour5
-setw -g mode-style 'fg=colour1 bg=colour18 bold'
-
-# panes
-set -g pane-border-style 'fg=colour19 bg=colour0'
-set -g pane-active-border-style 'bg=colour0 fg=colour9'
-
-# statusbar
-set -g status-position bottom
-set -g status-justify left
-set -g status-style 'bg=colour18 fg=colour137 dim'
-set -g status-left ''
-set -g status-right '#[fg=colour233,bg=colour19] %d/%m #[fg=colour233,bg=colour8] %H:%M:%S '
-set -g status-right-length 50
-set -g status-left-length 20
-
-setw -g window-status-current-style 'fg=colour1 bg=colour19 bold'
-setw -g window-status-current-format ' #I#[fg=colour249]:#[fg=colour255]#W#[fg=colour249]#F '
-
-setw -g window-status-style 'fg=colour9 bg=colour18'
-setw -g window-status-format ' #I#[fg=colour237]:#[fg=colour250]#W#[fg=colour244]#F '
-
-setw -g window-status-bell-style 'fg=colour255 bg=colour1 bold'
-
-# messages
-set -g message-style 'fg=colour232 bg=colour16 bold'
-
-# Create new session, split single vertically and horizontally
-# move x clipboard into tmux paste buffer
-bind C-p run "tmux set-buffer \"$(xclip -o)\"; tmux paste-buffer"
-# move tmux copy buffer into x clipboard
-bind C-y run "tmux show-buffer | xclip -i"
-
-setw -g mode-keys vi
-set -g default-terminal "screen-256color"
-bind h select-pane -L
-bind j select-pane -D
-bind k select-pane -U
-bind l select-pane -R
-bind r source-file $HOME/.tmux.conf
-
-
-# Use a symlink to look up SSH authentication
-setenv -g SSH_AUTH_SOCK $HOME/.ssh/ssh_auth_sock
 
 # List of default plugins
 set -g @plugin 'tmux-plugins/tpm'
