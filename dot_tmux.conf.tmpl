@@ -37,7 +37,7 @@ bind-key -T copy-mode-vi 'V' send -X rectangle-toggle
 bind-key -T copy-mode-vi 'y' send -X copy-selection
 bind-key -T copy-mode-vi Enter send -X copy-selection
 bind p paste-buffer
-{{ elif }}
+{{ else if }}
 set -g mouse on
 # Remove SSH_AUTH_SOCK to disable tmux automatically resetting the variable
 set -g update-environment "DISPLAY SSH_ASKPASS SSH_AGENT_PID \
@@ -85,11 +85,6 @@ setw -g window-status-bell-style 'fg=colour255 bg=colour1 bold'
 set -g message-style 'fg=colour232 bg=colour16 bold'
 
 # Create new session, split single vertically and horizontally
-new
-{{- if (eq .chezmoi.os "darwin") }}
-splitw -h
-splitw -v
-{{- else if (eq .chezmoi.os "linux") }}
 # move x clipboard into tmux paste buffer
 bind C-p run "tmux set-buffer \"$(xclip -o)\"; tmux paste-buffer"
 # move tmux copy buffer into x clipboard
@@ -122,7 +117,7 @@ if "test ! -d ~/.tmux/plugins/tpm" \
 
 set -g @colors-solarized '256'
 set -g default-command "reattach-to-user-namespace -l $SHELL"
-{{ end }}
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run -b '~/.tmux/plugins/tpm/tpm'
+{{ end }}
 
