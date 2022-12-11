@@ -1,9 +1,8 @@
-{{ if eq .chezmoi.os "linux" }}
-set -g update-environment "DISPLAY SSH_ASKPASS SSH_AGENT_PID \
+#set -g update-environment "DISPLAY SSH_ASKPASS SSH_AGENT_PID \
                              SSH_CONNECTION WINDOWID XAUTHORITY"
 
 # Use a symlink to look up SSH authentication
-setenv -g SSH_AUTH_SOCK $HOME/.ssh/ssh_auth_sock
+#setenv -g SSH_AUTH_SOCK $HOME/.ssh/ssh_auth_sock
 
 bind c new-window -c "#{pane_current_path}"
 
@@ -57,8 +56,11 @@ if "test ! -d ~/.tmux/plugins/tpm" \
    "run 'git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && ~/.tmux/plugins/tpm/bin/install_plugins'"
 
 set -g @colors-solarized '256'
+
+{{ if eq .chezmoi.os "Darwin" }}
 set -g default-command "reattach-to-user-namespace -l $SHELL"
+{{ end }}
+
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run -b '~/.tmux/plugins/tpm/tpm'
-{{ end }}
 
