@@ -16,7 +16,7 @@ bind - split-window -v -c "#{pane_current_path}"
 bind -n Home if-shell "$is_vim" "send-keys Escape 'OH'" "send-key C-a"
 bind -n End  if-shell "$is_vim" "send-keys Escape 'OF'" "send-key C-e"
 
-set -g default-terminal "tmux-256color"
+set -g default-terminal "xterm-256color"
 # Update with value from default-terminal
 set -ga terminal-overrides ",tmux-256color:Tc"
 
