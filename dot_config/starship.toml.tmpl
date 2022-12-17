@@ -1,14 +1,14 @@
 # Inserts a blank line between shell prompts
 add_newline = true
 
-{{ if eq .chezmoi.os "darwin" }}
+{{ if eq .chezmoi.os "Darwin" }}
 format="$all$directory$character"
-{{ else if eq .chezmoi.os "linux" }}
+{{ else if eq .chezmoi.os "Linux" }}
 format="$all$directory$character"
 {{ end }}
 
 [aws]
-disabled = true
+disabled = false
 
 [character]
 success_symbol = "[➜](bold green)"
@@ -26,7 +26,7 @@ format = 'on [$symbol$account(@$domain)(\($project\))]($style) '
 disabled = false
 
 [nodejs]
-disabled = true
+disabled = false
 
 [terraform]
 format = "[$workspace]($style) "
