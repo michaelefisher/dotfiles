@@ -13,10 +13,12 @@
 	aa = add --all :/
 	pu = push
     pf = push --force
+{{ if eq .chezmoi.os "Darwin" }}
 [url "https://github.com/"]
     insteadOf = ssh://git@github.com:
 [url "https://github.com/"]
 	insteadOf = git@github.com:
+{{ end }}
 [credential]
     helper = store
 [filter "lfs"]
