@@ -38,6 +38,7 @@ bindkey '^R' history-incremental-search-backward
 bindkey "^A" vi-beginning-of-line
 bindkey "^E" vi-end-of-line
 
+
 # Export PATH here
 {{ if eq .chezmoi.os "linux" -}}
 export PATH="/usr/local/sbin:/usr/local/opt/openjdk/bin:$HOME/.pyenv/shims/:$HOME/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/bin:$HOME/bin:$HOME/google-cloud-sdk/bin:$PATH"
