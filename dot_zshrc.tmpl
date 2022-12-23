@@ -87,3 +87,5 @@ if [ $(ps ax | grep "[s]sh-agent" | wc -l) -eq 0 ] ; then
     fi
 fi
 
+# Activate gcloud configs
+activate() { gcloud config configurations activate "$@" ; }
