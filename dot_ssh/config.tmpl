@@ -12,3 +12,39 @@ Host *
   IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
 {{ end -}}
 
+
+# ------------START-CODER-----------
+# This section is managed by coder. DO NOT EDIT.
+#
+# You should not hand-edit this section unless you are removing it, all
+# changes will be lost when running "coder config-ssh".
+#
+Host coder.containers
+	HostName coder.containers
+	ConnectTimeout=0
+	StrictHostKeyChecking=no
+	UserKnownHostsFile=/dev/null
+	LogLevel ERROR
+	ProxyCommand /usr/local/bin/coder --global-config "/Users/fisher/Library/Application Support/coderv2" ssh --stdio containers
+Host coder.containers.main
+	HostName coder.containers.main
+	ConnectTimeout=0
+	StrictHostKeyChecking=no
+	UserKnownHostsFile=/dev/null
+	LogLevel ERROR
+	ProxyCommand /usr/local/bin/coder --global-config "/Users/fisher/Library/Application Support/coderv2" ssh --stdio containers.main
+Host coder.template
+	HostName coder.template
+	ConnectTimeout=0
+	StrictHostKeyChecking=no
+	UserKnownHostsFile=/dev/null
+	LogLevel ERROR
+	ProxyCommand /usr/local/bin/coder --global-config "/Users/fisher/Library/Application Support/coderv2" ssh --stdio template
+Host coder.template.main
+	HostName coder.template.main
+	ConnectTimeout=0
+	StrictHostKeyChecking=no
+	UserKnownHostsFile=/dev/null
+	LogLevel ERROR
+	ProxyCommand /usr/local/bin/coder --global-config "/Users/fisher/Library/Application Support/coderv2" ssh --stdio template.main
+# ------------END-CODER------------
