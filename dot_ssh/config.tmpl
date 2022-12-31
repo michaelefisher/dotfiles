@@ -7,7 +7,7 @@ Host docker
    User fisher
    Hostname docker.rideand.coffee
    ForwardAgent yes
-   RequestTTY
+   RequestTTY no
    RemoteCommand tmux -CC a -t 0 || tmux -CC new
 {{- if eq .chezmoi.os "darwin" }}
 Host *
