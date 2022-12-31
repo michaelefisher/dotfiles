@@ -7,6 +7,8 @@ Host docker
    User fisher
    Hostname docker.rideand.coffee
    ForwardAgent yes
+   RequestTTY
+   RemoteCommand tmux -CC a -t 0 || tmux -CC new
 {{- if eq .chezmoi.os "darwin" }}
 Host *
   IdentityAgent "~/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
