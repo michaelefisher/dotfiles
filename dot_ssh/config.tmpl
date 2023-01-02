@@ -8,6 +8,10 @@ Host docker
    Hostname docker.rideand.coffee
    ForwardAgent yes
    RequestTTY yes
+   RemoteForward 3000 localhost:3000
+   RemoteForward 5000 localhost:5000
+   RemoteForward 8000 localhost:8000
+   RemoteForward 8001 localhost:8001
    RemoteCommand tmux -CC a -t 0 || tmux -CC new
 {{- if eq .chezmoi.os "darwin" }}
 Host *
