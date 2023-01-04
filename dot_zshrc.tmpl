@@ -89,3 +89,6 @@ fi
 
 # Activate gcloud configs
 activate() { gcloud config configurations activate "$@" ; }
+
+# Sign in to op
+signin() { echo eval $(op signin "$@") ; }
