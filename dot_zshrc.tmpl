@@ -92,3 +92,8 @@ activate() { gcloud config configurations activate "$@" ; }
 
 # Sign in to op
 signin() { eval $(op signin "$@") ; }
+
+# motd supervision
+if [[ -f /home/fisher/git/tinymotd/data/motd ]]; then
+    cat /home/fisher/git/tinymotd/data/motd
+fi
