@@ -4,7 +4,11 @@ if [ -f ~/.aliases ]; then
 fi
 
 export HISTTIMEFORMAT='%d/%m/%y %T '
-export EDITOR="vim"
+if [[ "$TERM_PROGRAM" == 'vscode' ]]; then
+	export EDITOR="code"
+else
+	export EDITOR="vim"
+fi
 
 export GIT="$HOME/git"
 function dateu() {
