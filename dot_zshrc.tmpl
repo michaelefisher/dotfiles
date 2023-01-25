@@ -67,7 +67,7 @@ command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
 # git
-fixup() { /usr/bin/git add --all && /usr/bin/git commit -m "fixup" --allow-empty && /usr/bin/git rebase -i "$@" ; }
+fixup() { /usr/bin/git commit -m "fixup" --allow-empty && /usr/bin/git rebase -i "$@" ; }
 
 # urldecode
 urldecode() { : "${*//+/ }"; echo -e "${_//%/\\x}"; }
