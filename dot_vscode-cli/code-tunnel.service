@@ -1,0 +1,14 @@
+[Unit]
+Description=Visual Studio Code Tunnel
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+User=fisher
+Group=fisher
+Restart=always
+RestartSec=10
+ExecStart=/usr/local/bin/code "--verbose" "--cli-data-dir" "/home/fisher/.vscode-cli" "tunnel" "service" "internal-run"
+
+[Install]
+WantedBy=default.target
