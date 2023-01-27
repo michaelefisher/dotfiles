@@ -57,6 +57,7 @@ if "test ! -d ~/.tmux/plugins/tpm" \
    "run 'git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && ~/.tmux/plugins/tpm/bin/install_plugins'"
 
 set -g @colors-solarized '256'
+set-window-option -g aggressive-resize off
 
 {{ if eq .chezmoi.os "Darwin" }}
 set -g default-command "reattach-to-user-namespace -l $SHELL"
