@@ -1,5 +1,6 @@
 " Gvimrc
-
+"
+set maclignatures
 set guifont=FiraCode\ Nerd\ Font\ Mono:h14
 colorscheme evening
 set lines=81
