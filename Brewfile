@@ -149,3 +149,40 @@ brew "wget"
 brew "yarn"
 brew "yq"
 brew "airplanedev/tap/airplane"
+{{ if eq .chezmoi.os "darwin" }}
+tap "buo/cask-upgrade"
+brew "reattach-to-user-namespace"
+cask "calibre"
+cask "font-hack-nerd-font"
+cask "google-cloud-sdk"
+cask "google-chrome"
+cask "macvim"
+cask "omnidisksweeper"
+cask "signal"
+cask "visual-studio-code"
+cask "cameracontroller"
+cask "cyberduck"
+cask "1password"
+mas "1Password for Safari", id: 1569813296
+mas "Boop", id: 1518425043
+mas "Caffeinated", id: 1362171212
+mas "CI2Go", id: 940028427
+mas "Grammarly for Safari", id: 1462114288
+mas "Harvest", id: 506189836
+mas "HTTPBot", id: 1232603544
+mas "Mastonaut", id: 1450757574
+mas "Mactracker", id: 430255202
+mas "NextDNS", id: 1464122853
+mas "Numbers", id: 409203825
+mas "OpenIn", id: 1547147101
+mas "Pages", id: 409201541
+mas "Reeder", id: 1529448980
+mas "Remote Control", id: 1459070853
+mas "Save to Pocket", id: 1477385213
+mas "Slack", id: 803453959
+mas "Vimari", id: 1480933944
+mas "WhatsApp", id: 1147396723
+mas "Tot", id: 1491071483
+mas "Grammarly: Writing App", id: 1462114288
+{{ end }}
+
