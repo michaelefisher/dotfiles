@@ -149,7 +149,7 @@ brew "wget"
 brew "yarn"
 brew "yq"
 brew "airplanedev/tap/airplane"
-{{ if eq .chezmoi.os "darwin" }}
+{{ if eq .chezmoi.os "darwin" -}}
 tap "buo/cask-upgrade"
 brew "reattach-to-user-namespace"
 cask "calibre"
@@ -184,5 +184,5 @@ mas "Vimari", id: 1480933944
 mas "WhatsApp", id: 1147396723
 mas "Tot", id: 1491071483
 mas "Grammarly: Writing App", id: 1462114288
-{{ end }}
+{{ end -}}
 
