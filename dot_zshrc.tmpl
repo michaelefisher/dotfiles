@@ -5,7 +5,7 @@ fi
 
 export HISTTIMEFORMAT='%d/%m/%y %T '
 if [[ "$TERM_PROGRAM" == 'vscode' ]]; then
-	export EDITOR="code"
+	export EDITOR="code --wait"
 else
 	export EDITOR="vim"
 fi
@@ -102,4 +102,4 @@ if [[ -f /home/fisher/git/tinymotd/data/motd ]]; then
     cat /home/fisher/git/tinymotd/data/motd
 fi
 
-source /Users/fisher/.config/op/plugins.sh
+test -f $HOME/.config/op/plugins.sh && source $HOME/.config/op/plugins.sh
