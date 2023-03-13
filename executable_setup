@@ -2,7 +2,7 @@
 
 start=`date +%s`
 
-test -f $HOME/metadata-setup-script.sh && sh -c \$HOME/metadata-setup-script.sh
+test -f $HOME/metadata-startup-script.sh && sh -c \$HOME/metadata-startup-script.sh
 
 if [[ -n "$USER" && "$USER" == "gitpod" ]]; then
   DOTFILES_PATH="$HOME/.dotfiles/"
