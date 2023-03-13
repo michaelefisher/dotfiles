@@ -2,6 +2,12 @@
 
 start=`date +%s`
 
+setupScriptName="metadata-setup-script"
+
+if [[ -f "${setupScriptName}.sh" ]]; then
+	sh -c "${setupScriptName}.sh";
+fi
+
 if [[ -n "$USER" && "$USER" == "gitpod" ]]; then
   DOTFILES_PATH="$HOME/.dotfiles/"
 fi
@@ -29,3 +35,4 @@ end=`date +%s`
 runtime=$((end-start))
 
 printf 'Runtime in seconds: %s' "$runtime"
+
