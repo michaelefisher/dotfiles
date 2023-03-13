@@ -2,10 +2,10 @@
 
 start=`date +%s`
 
-setupScriptName="metadata-setup-script"
+setupScriptName="metadata-setup-script.sh"
 
-if [[ -f "${setupScriptName}.sh" ]]; then
-	sh -c "${setupScriptName}.sh";
+if [[ -f "$setupScriptName" ]]; then
+	sh -c "$setupScriptName";
 fi
 
 if [[ -n "$USER" && "$USER" == "gitpod" ]]; then
