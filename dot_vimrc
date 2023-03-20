@@ -35,6 +35,19 @@ Plug 'Quramy/tsuquyomi'
 Plug 'metakirby5/codi.vim'
 " Plug 'vimwiki/vimwiki'
 
+Plug 'Shougo/ddc.vim'
+Plug 'vim-denops/denops.vim'
+
+" Install your UIs
+Plug 'Shougo/ddc-ui-native'
+
+" Install your sources
+"Plug 'Shougo/ddc-source-around'
+
+" Install your filters
+"Plug 'Shougo/ddc-matcher_head'
+"Plug 'Shougo/ddc-sorter_rank'
+
 " Frontend
 Plug 'eslint/eslint'
 Plug 'flowtype/vim-flow'
