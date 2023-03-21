@@ -1,2 +1,10 @@
-#!/bin/sh
-{{ end -}}
+#!/bin/bash
+
+if [[ $(which shc) -eq 0 ]]; then
+  	if [[ ! -f "$HOME"/setup.sh ]]; then
+		printf '%s' "No setup.sh file found in $HOME, run chezmoi apply."
+		exit 1;
+	fi
+	shc -o setup -f $HOME/setup.sh
+fi
+
