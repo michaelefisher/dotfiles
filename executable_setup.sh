@@ -8,6 +8,12 @@ if [[ -n "$USER" && "$USER" == "gitpod" ]]; then
   DOTFILES_PATH="$HOME/.dotfiles/"
 fi
 
+
+# Install brew.sh if needed (on linux and macOS)
+if [[ ! $(brew -v | echo $?) -eq 0 ]]; then
+  NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
 # Download and install Starship
 sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
 
