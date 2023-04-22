@@ -28,7 +28,7 @@ sh -c "$(curl -fsLS https://chezmoi.io/get)"
 "$HOME"/bin/chezmoi init --apply https://github.com/"$GITHUB_USERNAME"/dotfiles.git -k --config "$DOTFILES_PATH"/chezmoi.toml
 
 # Brew bundle
-if [[ $(brew -v | echo $?) -eq 0]]; then
+if [[ $(brew -v | echo $?) -eq 0 ]]; then
   brew bundle -f
 fi
 
