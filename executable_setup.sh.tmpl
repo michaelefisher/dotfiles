@@ -29,6 +29,7 @@ sh -c "$(curl -fsLS https://chezmoi.io/get)"
 
 # Brew bundle
 if [[ $(brew -v | echo $?) -eq 0 ]]; then
+  # Run bundle
   brew bundle -f
 fi
 
