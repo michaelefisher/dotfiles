@@ -10,16 +10,16 @@ if [[ -n "$USER" && "$USER" == "gitpod" ]]; then
   DOTFILES_PATH="${HOME}/.dotfiles/"
 fi
 
-
 # Install brew.sh if needed (on linux and macOS)
 if [[ ! $(brew -v | echo $?) -eq 0 ]]; then
   NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-# Download and install Starship
-sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
+# Install nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 
-# Run chezmoi
+# Download and install Starship
+sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes # Run chezmoi
 GITHUB_USERNAME=michaelefisher
 CHEZMOI_DIR=/.local/share/chezmoi
 rm -rf "$CHEZMOI_DIR"
