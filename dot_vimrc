@@ -87,6 +87,10 @@ set t_Co=256
 
 let g:gitgutter_max_signs = 500  " default value
 
+" Remap esc
+inoremap jj <esc>
+
+
 " install syntastic
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
