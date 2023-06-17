@@ -53,3 +53,8 @@ alias flushcache="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 
 # gcloud cli
 alias adc="gcloud auth login --update-adc"
+
+{{ if eq .chezmoi.os "darwin" }}
+# Tailscale
+alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
+{{ end }}
