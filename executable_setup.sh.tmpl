@@ -5,6 +5,11 @@ start=`date +%s`
 test -f "$HOME"/metadata-startup-script.sh && sh -c "$HOME"/metadata-startup-script.sh
 {{ end }}
 
+{{ if eq .chezmoi.os "linux" }}
+sudo apt-get update && \
+  sudo apt-get install -f
+{{ end }}
+
 DOTFILES_PATH="$HOME"
 if [[ -n "$USER" && "$USER" == "gitpod" ]]; then
   DOTFILES_PATH="${HOME}/.dotfiles/"
