@@ -99,3 +99,8 @@ fi
 
 test -f $HOME/.config/op/plugins.sh && source $HOME/.config/op/plugins.sh
 test -f /usr/share/google-cloud-sdk/completion.zsh.inc && source /usr/share/google-cloud-sdk/completion.zsh.inc
+
+# k8s
+creds() {
+	gcloud container clusters get-credentials "$1" --region us-central1
+}
