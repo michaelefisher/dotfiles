@@ -10,3 +10,10 @@
     exact = true
     stripComponents = 1
     refreshPeriod = "168h"
+["fonts"]
+    type = "archive"
+    url = "https://github.com/ryanoasis/nerd-fonts/archive/master.tar.gz"
+    exact = true
+    stripComponents = 1
+    refreshPeriod = "168h"
+
