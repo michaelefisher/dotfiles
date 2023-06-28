@@ -108,7 +108,7 @@ eval "$(starship init zsh)"
 # $1	terraform command
 terraform() {
 	pushd modules/regions/us-central1;
-    test "$1" != "" && command terraform "$1";
+    test "$1" != "" && command terraform "$@";
 	popd;
 }
 
