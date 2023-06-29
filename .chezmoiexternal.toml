@@ -10,4 +10,10 @@
     exact = true
     stripComponents = 1
     refreshPeriod = "168h"
+["bin/try"]
+    type = "archive"
+    url = "https://github.com/binpash/try/archive/main.tar.gz"
+    exact = true
+    stripComponents = 1
+    refreshPeriod = "168h"
 
