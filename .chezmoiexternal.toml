@@ -14,6 +14,6 @@
     type = "archive"
     url = "https://github.com/binpash/try/archive/main.tar.gz"
     exact = true
-    stripComponents = 1
+    stripComponents = 2
     refreshPeriod = "168h"
 
