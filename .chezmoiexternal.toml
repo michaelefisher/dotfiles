@@ -12,7 +12,7 @@
     refreshPeriod = "168h"
 ["bin/try/try"]
     type = "file"
-    url = "https://github.com/binpash/try/try"
+    url = "https://raw.githubusercontent.com/binpash/try/main/try"
     exact = true
     stripComponents = 1
     refreshPeriod = "168h"
