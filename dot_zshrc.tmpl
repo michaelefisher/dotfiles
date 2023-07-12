@@ -103,5 +103,14 @@ creds() {
 # Start starship
 eval "$(starship init zsh)"
 
+# terraform
+# params:
+# $1	terraform command
+terraform() {
+	pushd modules/regions/us-central1;
+    test "$1" != "" && command terraform "$@";
+	popd;
+}
+
 autoload -U compinit && compinit
 

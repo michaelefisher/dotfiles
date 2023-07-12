@@ -10,4 +10,10 @@
     exact = true
     stripComponents = 1
     refreshPeriod = "168h"
+["bin/try"]
+    type = "file"
+    url = "https://raw.githubusercontent.com/binpash/try/main/try"
+    exact = true
+    stripComponents = 1
+    refreshPeriod = "168h"
 
