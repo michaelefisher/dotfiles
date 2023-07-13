@@ -107,9 +107,11 @@ eval "$(starship init zsh)"
 # params:
 # $1	terraform command
 terraform() {
-	pushd modules/regions/us-central1;
-    test "$1" != "" && command terraform "$@";
-	popd;
+    if [[ "$(pwd)" == "${HOME}/git/terraform-google-cloud" ]]; then
+		pushd modules/regions/us-central1;
+		test "$1" != "" && command terraform "$@";
+		popd;
+    fi
 }
 
 autoload -U compinit && compinit
