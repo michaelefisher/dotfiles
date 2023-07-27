@@ -120,5 +120,11 @@ terraform() {
     fi
 }
 
+# OCTAVIA CLI 0.44.4
+OCTAVIA_ENV_FILE=/Users/fisher/.octavia
+export OCTAVIA_ENABLE_TELEMETRY=False
+alias octavia-dev="docker run -i --rm --name octavia-cli-dev -v \$(pwd):/home/octavia-project/dev --network host --env-file \${OCTAVIA_ENV_FILE} --user \$(id -u):\$(id -g) airbyte/octavia-cli:0.44.4"
+alias octavia-prod="docker run -i --rm --name octavia-cli-prod -v \$(pwd):/home/octavia-project/prod --network host --env-file \${OCTAVIA_ENV_FILE} --user \$(id -u):\$(id -g) airbyte/octavia-cli:0.44.4"
+
 autoload -U compinit && compinit
 

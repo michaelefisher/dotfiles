@@ -1,35 +1,11 @@
-Host walter
-   User michael
-   Hostname sshwalter.local
-   ForwardAgent yes
-   LocalForward 52698 localhost:52698
 Host mosh-docker
-   User fisher
-   Hostname docker.rideand.coffee
-   ForwardAgent yes
-   RequestTTY yes
-Host docker-tailscale
    User fisher
    Hostname docker-tailscale.rideand.coffee
    ForwardAgent yes
    RequestTTY yes
-   StrictHostKeyChecking no
-   LocalForward 3000 localhost:3000
-   LocalForward 3001 localhost:3001
-   LocalForward 4000 localhost:4000
-   LocalForward 5000 localhost:5000
-   LocalForward 5001 localhost:5001
-   LocalForward 8000 localhost:8000
-   LocalForward 8001 localhost:8001
-   LocalForward 8080 localhost:8080
-   LocalForward 9000 localhost:9000
-   LocalForward 9099 localhost:9099
-   LocalForward 9199 localhost:9199
-   LocalForward 9229 localhost:9229
-   RemoteCommand tmux -CC a -t 0 || tmux -CC new
 Host docker
    User fisher
-   Hostname docker.rideand.coffee
+   Hostname docker-tailscale.rideand.coffee
    ForwardAgent yes
    RequestTTY yes
    StrictHostKeyChecking no
