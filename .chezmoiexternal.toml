@@ -16,4 +16,10 @@
     exact = true
     stripComponents = 1
     refreshPeriod = "168h"
-
+["bin/code"]
+    type = "archive"
+    url = "https://az764295.vo.msecnd.net/stable/2ccd690cbff1569e4a83d7c43d45101f817401dc/vscode_cli_alpine_x64_cli.tar.gz"
+    stripComponents = 1
+    refreshPeriod = "700h"
+    include = ["*/*/code"]
+    exact = true
