@@ -9,7 +9,7 @@ alias p="pmset"
 alias sleepnow="pmset sleepnow"
 
 # tmux aliases
-if [[ "$LC_TERMINAL" == "iTerm2" ]]; then
+if [[ "$LC_TERMINAL" == "iTerm2" && "$MOSH" == 0 ]]; then
 	alias ta="tmux -CC attach -t$1"
     alias tn="tmux -CC new"
     alias th="tmux splitw -h"
