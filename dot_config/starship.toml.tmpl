@@ -39,7 +39,6 @@ format = "[$workspace]($style) "
 format = 'on [⛵ ($cluster in )$context \($namespace\)](dimmed green) '
 disabled = false
 [kubernetes.context_aliases]
-gke_dev3869c056_us-central1_airbyte-dev-cluster = dev
-gke_prod8b61f23e_us-central1_airbyte-prod-cluster = prod
-'gke_.*_(?P<var_cluster>[\w-]+)' = 'gke-$var_cluster'
+gke_dev3869c056_us-central1_airbyte-dev-cluster = 'dev'
+gke_prod8b61f23e_us-central1_airbyte-prod-cluster = 'prod'
 
