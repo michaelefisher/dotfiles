@@ -38,7 +38,6 @@ format = "[$workspace]($style) "
 [kubernetes]
 format = 'on [⛵ ($cluster in )$context \($namespace\)](dimmed green) '
 disabled = false
-detect_files = ['k8s']
 [kubernetes.context_aliases]
 'gke_.*_(?P<var_cluster>[\w-]+)' = 'gke-$var_cluster'
 
