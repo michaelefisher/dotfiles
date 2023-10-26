@@ -87,8 +87,13 @@ fi
 
 # Activate gcloud configs
 activate() { gcloud config configurations activate "$@" ; }
-project() { test "$1" == "prod" && gcloud config set project prod8b61f23e || gcloud config set project dev3869c056 }
-
+project() {
+	if [ "$1" == "prod" ]; then
+	  gcloud config set project prod8b61f23e;
+    else
+	  gcloud config set project dev3869c056;
+	fi
+}
 # Sign in to op
 signin() { eval $(op signin "$@") ; }
 
