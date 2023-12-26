@@ -126,17 +126,20 @@ terraform() {
     fi
 }
 
-# OCTAVIA CLI 0.44.4
-OCTAVIA_ENV_FILE=/Users/fisher/.octavia
-export OCTAVIA_ENABLE_TELEMETRY=False
-alias octavia-dev="docker run -i --rm --name octavia-cli-dev -v \$(pwd):/home/octavia-project/dev --network host --env-file \${OCTAVIA_ENV_FILE} --user \$(id -u):\$(id -g) airbyte/octavia-cli:0.50.7"
-alias octavia-prod="docker run -i --rm --name octavia-cli-prod -v \$(pwd):/home/octavia-project/prod --network host --env-file \${OCTAVIA_ENV_FILE} --user \$(id -u):\$(id -g) airbyte/octavia-cli:0.50.7"
+# OCTAVIA CLI 0.40.17
+          OCTAVIA_ENV_FILE=$HOME/.octavia
+          export OCTAVIA_ENABLE_TELEMETRY=False
+          alias octavia="docker run -i --rm -v \$(pwd):/home/octavia-project:Z --network host --env-file \${OCTAVIA_ENV_FILE} airbyte/octavia-cli:0.50.7"
+          export GITHUB_TOKEN="$(echo "op://Engineering/GitHub PAT Airbyte dbt/credential" | op inject)"
+          export HMAC_KEY_SECRET="$(echo "op://Engineering/Airbyte Prod GCS HMAC/credential" | op inject)"
+          export HMAC_KEY_ACCESS_ID="$(echo "op://Engineering/Airbyte Prod GCS HMAC/username" | op inject)"
 
+# Export MOSH var
 ps -p $PPID | grep mosh-server > /dev/null
 if [[ "$?" == "0" ]]; then
-  export MOSH=1
+  export MOSH="true"
 else
-  export MOSH=0
+  export MOSH="false"
 fi
 
 merge() { gh pr merge "$1" --admin }
