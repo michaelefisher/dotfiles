@@ -139,5 +139,7 @@ else
   export MOSH=0
 fi
 
+merge() { gh pr merge "$1" --admin }
+
 autoload -U compinit && compinit
 
