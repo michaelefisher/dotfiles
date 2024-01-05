@@ -24,7 +24,7 @@ fi
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 
 # Download and install Starship
-sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes {{- if eq .chezmoi.os "darwin" -}}--bin-dir /opt{{- end -}}
+sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes {{ if eq .chezmoi.os "darwin" }}--bin-dir /opt{{ end }}
 GITHUB_USERNAME=michaelefisher
 CHEZMOI_DIR=/.local/share/chezmoi
 rm -rf "$CHEZMOI_DIR"
