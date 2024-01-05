@@ -24,7 +24,7 @@ fi
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 
 # Download and install Starship
-sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes # Run chezmoi
+sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes --bin
 GITHUB_USERNAME=michaelefisher
 CHEZMOI_DIR=/.local/share/chezmoi
 rm -rf "$CHEZMOI_DIR"
@@ -40,9 +40,9 @@ if [[ $(brew -v | echo $?) -eq 0 ]]; then
   brew unlink vim
 fi
 
+{{ if eq .chezmoi.os "linux" }}
 # Configure tailscale
 
-{{ if eq .chezmoi.os "linux" }}
 echo 'net.ipv4.ip_forward = 1' | sudo tee -a /etc/sysctl.d/99-tailscale.conf
 echo 'net.ipv6.conf.all.forwarding = 1' | sudo tee -a /etc/sysctl.d/99-tailscale.conf
 sudo sysctl -p /etc/sysctl.d/99-tailscale.conf
