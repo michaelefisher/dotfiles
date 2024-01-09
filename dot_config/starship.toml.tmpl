@@ -38,6 +38,6 @@ format = "[$workspace]($style) "
 [kubernetes]
 format = 'on [⛵ $context \($namespace\)](dimmed green) '
 disabled = false
-[kubernetes.context_aliases]
+[kubernetes.contexts.context_alias]
 'gke_.*_(?P<var_cluster>[\w-]+)' = 'gke-$var_cluster'
 
