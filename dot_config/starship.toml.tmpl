@@ -39,5 +39,5 @@ format = "[$workspace]($style) "
 format = 'on [⛵ $context \($namespace\)](dimmed green) '
 disabled = false
 contexts = [
-  { context_pattern = "gke_.*_(?P<var_cluster>[\w-]+)", context_alias = "gke-$var_cluster", symbol = "󱃾 " }
+  { context_pattern = 'gke_.*_(?P<var_cluster>[\w\-]+)', context_alias = "gke-$var_cluster", symbol = "󱃾 " }
 
