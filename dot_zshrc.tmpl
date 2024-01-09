@@ -33,7 +33,7 @@ bindkey "^E" vi-end-of-line
 export PATH="/usr/local/sbin:/usr/local/opt/openjdk/bin:$HOME/.pyenv/shims/:$HOME/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/bin:$HOME/bin:$HOME/google-cloud-sdk/bin:$PATH"
 export DOCKER_HOST=unix:///run/user/1000/docker.sock
 {{ else }}
-export PATH="/usr/local/sbin:/usr/local/opt/openjdk/bin:$HOME/.pyenv/shims/:$HOME/bin/:/opt/homebrew/bin/:$HOME/go/bin:$PATH"
+export PATH="/usr/local/sbin:/usr/local/opt/openjdk/bin:$HOME/.pyenv/shims/:$HOME/bin/:/opt/homebrew/bin/:$HOME/go/bin:/opt:$PATH"
 {{ end }}
 declare -a NODE_GLOBALS=(`find ~/.nvm/versions/node -maxdepth 3 -type l -wholename '*/bin/*' | xargs -n1 basename | sort | uniq`)
 
@@ -141,6 +141,8 @@ if [[ "$?" == "0" ]]; then
 else
   export MOSH="false"
 fi
+
+merge() { gh pr merge "$1" --admin }
 
 autoload -U compinit && compinit
 
