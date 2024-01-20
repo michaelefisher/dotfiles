@@ -128,5 +128,9 @@ terraform() {
 
 merge() { gh pr merge "$1" --admin }
 
-autoload -U compinit && compinit
+. "$HOME/.asdf/asdf.sh"
+# append completions to fpath
+fpath=(${ASDF_DIR}/completions $fpath)
+
+autoload -Uz compinit && compinit
 
