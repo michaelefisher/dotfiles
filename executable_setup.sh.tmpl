@@ -20,8 +20,7 @@ if [[ ! $(brew -v | echo $?) -eq 0 ]]; then
   NONINTERACTIVE=1 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-# Install nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+test -f .tool-versions && cat .tool-versions | cut -d' ' -f1 | xargs -L1 echo asdf plugin add
 
 # Download and install Starship
 sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes {{ if eq .chezmoi.os "darwin" }}--bin-dir /opt{{ end }}
