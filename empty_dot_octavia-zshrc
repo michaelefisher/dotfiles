@@ -1,3 +1,0 @@
-OCTAVIA_ENV_FILE=/Users/fisher/.octavia
-export OCTAVIA_ENABLE_TELEMETRY=True
-alias octavia="docker run -i --rm -v \$(pwd):/home/octavia-project --network host --env-file \${OCTAVIA_ENV_FILE} --user \$(id -u):\$(id -g) airbyte/octavia-cli:0.50.7"
