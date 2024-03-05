@@ -20,31 +20,22 @@ if astronvim.default_colorscheme then
   end
 end
 
-vim.cmd([[
+local Plug = vim.fn['plug#']
+vim.call('plug#begin')
 
-set nocompatible              " be iMproved, required
-filetype off
-
-filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PlugList       - lists configured plugins
-" :PlugInstall    - installs plugins; append `!` to update or just :PlugUpdate
-" :PlugSearch foo - searches for foo; append `!` to refresh local cache
-" :PlugClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-
-call plug#begin((
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
-call plug#end()
-"
-" Put your non-Plug stuff after this line
+
+vim.call('plug#end')
+
+vim.cmd([[
+
+set nocompatible              " be iMproved, required
+filetype off
 
 " Clipboard stuff
 noremap <Leader>y "*y
@@ -55,8 +46,7 @@ set clipboard=unnamedplus
 
 syntax on
 set mouse=a
-" set tabs to 2
-set tabstop=4
+set tabstop=2
 set nu
 
 set t_Co=256
