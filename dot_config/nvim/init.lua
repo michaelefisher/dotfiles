@@ -91,4 +91,4 @@ cmp.setup({
 })
 require("astronvim.utils").conditional_func(astronvim.user_opts("polish", nil, false), true)
 
-vim.o.guifont = "Hack Nerd Font Mono:h14"
+vim.o.guifont = "Hack Nerd Font Mono:h15"
