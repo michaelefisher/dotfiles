@@ -84,7 +84,7 @@ cmp.setup({
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'vsnip' }, -- For vsnip users.
-    -- { name = 'luasnip' }, -- For luasnip users.
+    { name = 'luasnip' }, -- For luasnip users.
     -- { name = 'ultisnips' }, -- For ultisnips users.
     -- { name = 'snippy' }, -- For snippy users.
   }, {
@@ -92,6 +92,13 @@ cmp.setup({
   })
 })
 require("astronvim.utils").conditional_func(astronvim.user_opts("polish", nil, false), true)
-require("mason").setup()
-
+require("mason").setup({
+    ui = {
+        icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗"
+        }
+    }
+})
 vim.o.guifont = "Hack Nerd Font Mono:h15"
