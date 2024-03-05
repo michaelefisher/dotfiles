@@ -35,7 +35,7 @@ filetype plugin indent on    " required
 " :PlugSearch foo - searches for foo; append `!` to refresh local cache
 " :PlugClean      - confirms removal of unused plugins; append `!` to auto-approve removal
 
-call plug#begin(s:plug_dir)
+call plug#begin((
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
