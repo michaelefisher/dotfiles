@@ -12,6 +12,16 @@ for _, source in ipairs {
   if not status_ok then vim.api.nvim_err_writeln("Failed to load " .. source .. "\n\n" .. fault) end
 end
 
+require("mason").setup({
+    ui = {
+        icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗"
+        }
+    }
+})
+
 if astronvim.default_colorscheme then
   if not pcall(vim.cmd.colorscheme, astronvim.default_colorscheme) then
     require("astronvim.utils").notify(
@@ -92,13 +102,4 @@ cmp.setup({
   })
 })
 require("astronvim.utils").conditional_func(astronvim.user_opts("polish", nil, false), true)
-require("mason").setup({
-    ui = {
-        icons = {
-            package_installed = "✓",
-            package_pending = "➜",
-            package_uninstalled = "✗"
-        }
-    }
-})
 vim.o.guifont = "Hack Nerd Font Mono:h15"
