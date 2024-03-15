@@ -1,0 +1,7 @@
+[core]
+account = fisher@pyflabs.io
+project = pyf-infra-admin
+
+[billing/quota_project]
+project = pyf-infra-admin
+
