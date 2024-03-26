@@ -1,9 +1,0 @@
-[data]
-email = "fishermichaele@gmail.com"
-pythonversion = "3.9.1"
-sshAgentContainer.location = "2BUA8C4S2C.com.1password"
-[git]
-autoCommit = true
-autoPush = true
-[editor]
-command = "nvim"
