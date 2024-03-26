@@ -21,8 +21,8 @@
     url = "https://az764295.vo.msecnd.net/stable/2ccd690cbff1569e4a83d7c43d45101f817401dc/vscode_cli_alpine_x64_cli.tar.gz"
     stripComponents = 1
     refreshPeriod = "700h"
-#[".config/nvim"]
-#	url = "https://github.com/AstroNvim/AstroNvim/archive/master.tar.gz"
-#	type = "archive"
-#    extract = true
-#    stripComponents = 1
+[".config/nvim"]
+	url = "https://github.com/AstroNvim/AstroNvim/archive/master.tar.gz"
+	type = "archive"
+    extract = true
+    stripComponents = 1
