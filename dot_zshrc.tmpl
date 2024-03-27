@@ -40,6 +40,12 @@ export PATH="/usr/local/sbin:/usr/local/opt/openjdk/bin:$HOME/.pyenv/shims/:$HOM
   export LDFLAGS="-L/usr/local/opt/bzip2/lib -L/usr/local/opt/zlib/lib -L/usr/local/opt/openssl@1.1/lib"
   export CFLAGS="-I/usr/local/opt/bzip2/include -I/usr/local/opt/zlib/include -I/usr/local/opt/openssl@1.1/include -I$(xcrun --show-sdk-path)/usr/include -Wno-implicit-function-declaration"
 fi
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/fisher/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/fisher/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/fisher/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/fisher/google-cloud-sdk/completion.zsh.inc'; fi
 {{ end -}}
 
 # git
@@ -61,13 +67,6 @@ fi
 
 # Activate gcloud configs
 activate() { gcloud config configurations activate "$@" ; }
-project() {
-	if [ "$1" == "prod" ]; then
-	  gcloud config set project prod8b61f23e;
-    else
-	  gcloud config set project dev3869c056;
-	fi
-}
 # Sign in to op
 signin() { eval $(op signin "$@") ; }
 
@@ -78,8 +77,10 @@ if [[ -f /home/fisher/git/tinymotd/data/motd ]]; then
 fi
 {{ end -}}
 
+{{ if eq .chezmoi.os "linux" -}}
 test -f $HOME/.config/op/plugins.sh && source $HOME/.config/op/plugins.sh
 test -f /usr/share/google-cloud-sdk/completion.zsh.inc && source /usr/share/google-cloud-sdk/completion.zsh.inc
+{{ end -}}
 
 # k8s
 creds() {
@@ -92,15 +93,15 @@ eval "$(starship init zsh)"
 # terraform
 # params:
 # $1	terraform command
-terraform() {
-    if [[ "$(pwd)" == "${HOME}/git/terraform-google-cloud" ]]; then
-		pushd modules/regions/us-central1;
-		test "$1" != "" && command terraform "$@";
-		popd;
-    else
-		command terraform "$@";
-    fi
-}
+#terraform() {
+#    if [[ "$(pwd)" == "${HOME}/git/terraform-google-cloud" ]]; then
+#		pushd modules/regions/us-central1;
+#		test "$1" != "" && command terraform "$@";
+#		popd;
+#    else
+#		command terraform "$@";
+#    fi
+#}
 
 source ~/.octavia-zshrc
 
