@@ -37,9 +37,6 @@ export PATH="/usr/local/sbin:/usr/local/opt/openjdk/bin:$HOME/.pyenv/shims/:$HOM
 {{ end }}
 
 {{ if eq .chezmoi.os "darwin" -}}
-if [[ -d "$(brew --prefix)/Caskroom/google-cloud-sdk/google-cloud-sdk/" ]]; then
-  source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
-  source "$(brew --prefix)/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
   export LDFLAGS="-L/usr/local/opt/bzip2/lib -L/usr/local/opt/zlib/lib -L/usr/local/opt/openssl@1.1/lib"
   export CFLAGS="-I/usr/local/opt/bzip2/include -I/usr/local/opt/zlib/include -I/usr/local/opt/openssl@1.1/include -I$(xcrun --show-sdk-path)/usr/include -Wno-implicit-function-declaration"
 fi
@@ -53,9 +50,6 @@ urldecode() { : "${*//+/ }"; echo -e "${_//%/\\x}"; }
 
 # view octal
 octal() { stat -f "%OLp" $1; }
-
-# Export Google Impersonate Service Account
-[[ -n $TF_ADMIN ]] && export GOOGLE_IMPERSONATE_SERVICE_ACCOUNT=terraform@$TF_ADMIN.iam.gserviceaccount.com
 
 if [ $(ps ax | grep "[s]sh-agent" | wc -l) -eq 0 ] ; then
     eval $(ssh-agent -s) > /dev/null
@@ -77,10 +71,12 @@ project() {
 # Sign in to op
 signin() { eval $(op signin "$@") ; }
 
+{{ if eq .chezmoi.os "darwin"  -}}
 # motd supervision
 if [[ -f /home/fisher/git/tinymotd/data/motd ]]; then
     cat /home/fisher/git/tinymotd/data/motd
 fi
+{{ end -}}
 
 test -f $HOME/.config/op/plugins.sh && source $HOME/.config/op/plugins.sh
 test -f /usr/share/google-cloud-sdk/completion.zsh.inc && source /usr/share/google-cloud-sdk/completion.zsh.inc
