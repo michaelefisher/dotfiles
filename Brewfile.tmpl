@@ -1,10 +1,10 @@
-tap "airplanedev/tap"
 tap "hashicorp/tap"
 tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "microsoft/mssql-release"
 tap "pulumi/tap"
+brew "asdf"
 brew "agg"
 brew "zlib"
 brew "gmp"
@@ -156,25 +156,19 @@ brew "watch"
 brew "wget"
 brew "yarn"
 brew "yq"
-brew "airplanedev/tap/airplane"
 cask "1password-cli"
 cask "font-hack-nerd-font"
 {{ if eq .chezmoi.os "darwin" -}}
 tap "buo/cask-upgrade"
 brew "reattach-to-user-namespace"
+cask "grammarly-desktop"
 cask "google-drive"
 cask "logi-options-plus"
-# Commented out because installed manually
-# cask "calibre"
-cask "cacher"
-cask "google-cloud-sdk"
+cask "logitune"
 cask "google-chrome"
 cask "omnidisksweeper"
 cask "signal"
 cask "visual-studio-code"
-cask "cameracontroller"
-cask "cyberduck"
-cask "fellow"
 mas "1Password for Safari", id: 1569813296
 mas "Boop", id: 1518425043
 mas "Caffeinated", id: 1362171212
@@ -182,8 +176,6 @@ mas "Grammarly for Safari", id: 1462114288
 mas "Harvest", id: 506189836
 mas "HTTPBot", id: 1232603544
 mas "Mactracker", id: 430255202
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
 mas "Reeder", id: 1529448980
 mas "OpenIn", id: 1643649331
 mas "Save to Pocket", id: 1477385213
@@ -191,5 +183,7 @@ mas "Vimari", id: 1480933944
 mas "Tailscale", id: 1475387142
 mas "WhatsApp", id: 1147396723
 mas "Grammarly: Writing App", id: 1462114288
+mas "SnippetsLab", id: 1006087419
+mas "Slack for Desktop", id: 803453959
 {{ end -}}
 

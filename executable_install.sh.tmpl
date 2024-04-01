@@ -47,6 +47,10 @@ echo 'net.ipv6.conf.all.forwarding = 1' | sudo tee -a /etc/sysctl.d/99-tailscale
 sudo sysctl -p /etc/sysctl.d/99-tailscale.conf
 {{ end }}
 
+if [[ -f "$HOME"/.asdfrc && -f "$HOME"/.tool-versions ]]; then
+  do  cat .tool-versions | cut -d' ' -f1 | xargs -L 1 asdf plugin add
+fi
+
 end=`date +%s`
 runtime=$((end-start))
 
