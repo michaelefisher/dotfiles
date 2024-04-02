@@ -24,6 +24,7 @@ sudo apt-get -y install \
   libutempter-dev \
   zlib1g-dev \
   1password-cli \
+  vim \
   zsh
 
 # Download and install Starship
