@@ -24,4 +24,7 @@ sh -c "$(curl -fsSL https://starship.rs/install.sh)" -- --yes
 
 # Download and install Chezmoi
 export GITHUB_USERNAME=michaelefisher
-sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply $GITHUB_USERNAME --config $HOME/dotfiles/chezmoi.toml
+if [[ ! -f ".local/share/chezmoi/bootstrap" ]];
+  printf '%s' "No bootstrap found, running Chezmoi..."
+  sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply $GITHUB_USERNAME --config $HOME/dotfiles/chezmoi.toml
+fi
