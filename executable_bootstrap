@@ -9,3 +9,4 @@ if [[ ! -f ".local/share/chezmoi/bootstrap" ]]; then
   printf '%s' "No bootstrap found, running Chezmoi..."
   sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply $GITHUB_USERNAME --config .local/share/chezmoi/chezmoi.toml
 fi
+
