@@ -26,6 +26,7 @@
 	type = "archive"
     extract = true
     stripComponents = 1
+    refreshPeriod = "168h"
 [".local/share/nvim/site/autoload/plug.vim"]
     url = "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
     type = "file"
