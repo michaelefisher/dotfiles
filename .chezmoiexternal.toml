@@ -29,4 +29,9 @@
 [".local/share/nvim/site/autoload/plug.vim"]
     url = "https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
     type = "file"
-
+[".asdf"]
+    url = "https://github.com/asdf-vm/asdf/archive/master.tar.gz"
+    type = "archive"
+    extract = true
+    stripComponents = 1
+    refreshPeriod = "168h"

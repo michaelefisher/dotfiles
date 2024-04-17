@@ -106,9 +106,11 @@ source ~/.octavia-zshrc
 
 merge() { gh pr merge "$1" --admin }
 
-. "$(brew --prefix asdf)/libexec/asdf.sh"
-# append completions to fpath
-fpath=(${ASDF_DIR}/completions $fpath)
+if [[ -d "$HOME"/.asdf ]]; then
+	. "$HOME/.asdf/asdf.sh"
+	# append completions to fpath
+	fpath=(${ASDF_DIR}/completions $fpath)
+fi
 
 autoload -Uz compinit && compinit
 
