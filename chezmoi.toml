@@ -1,8 +1,6 @@
 [data]
-email = "fishermichaele@gmail.com"
-pythonversion = "3.9.1"
+    email = "fishermichaele@gmail.com"
+    pythonversion = "3.9.1"
 [git]
-autoCommit = true
-autoPush = true
-[editor]
-command = "vim"
+    autoCommit = true
+    autoPush = true
