@@ -4,3 +4,4 @@ nodejs 21.6.0
 java adoptopenjdk-jre-21.0.0+35.0.LTS
 gum 0.13.0
 jq 1.7.1
+gcloud 377.0.0
