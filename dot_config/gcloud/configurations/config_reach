@@ -1,0 +1,7 @@
+[core]
+account = michael.fisher@trestle.us
+project = reach-vote
+
+[billing/quota_project]
+project = reach-vote
+

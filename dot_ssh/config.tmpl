@@ -20,7 +20,7 @@ Host docker
    LocalForward 9099 localhost:9099
    LocalForward 9199 localhost:9199
    LocalForward 9229 localhost:9229
-   RemoteCommand tmux -CC a -t 0 || tmux -CC new
+#   RemoteCommand tmux -CC a -t 0 || tmux -CC new
 {{- if eq .chezmoi.os "darwin" }}
 Host *
   StrictHostKeyChecking no

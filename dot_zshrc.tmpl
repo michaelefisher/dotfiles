@@ -34,6 +34,7 @@ export PATH="/usr/local/sbin:/usr/local/opt/openjdk/bin:$HOME/.pyenv/shims/:$HOM
 export DOCKER_HOST=unix:///run/user/1000/docker.sock
 {{ else }}
 export PATH="/usr/local/sbin:/usr/local/opt/openjdk/bin:$HOME/.pyenv/shims/:$HOME/bin/:/opt/homebrew/bin/:$HOME/go/bin:/opt:$HOME/.deno/bin/:$PATH"
+export DOCKER_HOST=unix:///Users/fisher/.colima/default/docker.sock
 {{ end }}
 
 {{ if eq .chezmoi.os "darwin" -}}
