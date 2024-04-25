@@ -62,3 +62,7 @@ alias lf="kubectl -n airbyte logs -f"
 # Tailscale
 alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 {{ end }}
+
+{{ if eq .chezmoi.os "linux" }}
+alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
+{{ end }}
