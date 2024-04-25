@@ -21,6 +21,14 @@ Host docker
    LocalForward 9199 localhost:9199
    LocalForward 9229 localhost:9229
 #   RemoteCommand tmux -CC a -t 0 || tmux -CC new
+Host loris
+   User fisher
+   Hostname upbeat-molybdenum-loris
+   ForwardAgent yes
+   RequestTTY yes
+   LocalForward 8080
+   LocalForward 8082
+
 {{- if eq .chezmoi.os "darwin" }}
 Host *
   StrictHostKeyChecking no
