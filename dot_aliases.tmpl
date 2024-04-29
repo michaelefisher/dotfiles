@@ -52,7 +52,7 @@ fi
 alias flushcache="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 
 # gcloud cli
-alias adc="gcloud auth login --update-adc"
+alias adc="gcloud auth application-default login"
 
 # kubectl -n airbyte
 alias airbytectl="kubectl -n airbyte"
