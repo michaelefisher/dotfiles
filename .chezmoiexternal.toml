@@ -27,3 +27,8 @@
     extract = true
     stripComponents = 1
     refreshPeriod = "168h"
+[".config/nvim/pack/github/start/copilot.vim"]
+    url = "https://github.com/github/copilot.vim/archive/master.tar.gz"
+    type = "archive"
+    extract = true
+    refreshPeriod = "168h"
