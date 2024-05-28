@@ -1,6 +1,7 @@
 [data]
     email = "fishermichaele@gmail.com"
     pythonversion = "3.8.13"
+    dockerpostgres = "false"
 [git]
     autoCommit = true
     autoPush = true
