@@ -44,12 +44,6 @@ alias fh="find . -name $1"
 # chrome with corb disabled
 alias chrome="open /Applications/Google\ Chrome.app --args --disable-features=BypassCorbOnlyForExtensionsAllowlist --enable-features=NetworkService"
 
-{{ if eq .dockerpostgres "true" }}
-if [[ `docker info > /dev/null 2>&1` -eq 0 ]]; then
-	alias pg="docker run -it --rm postgres psql -h host.docker.internal --set=sslmode=require"
-fi
-{{ end }}
-
 alias flushcache="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 
 # gcloud cli
