@@ -1,10 +1,23 @@
-if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+-- if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
 
 -- You can also add or configure plugins by creating files in this `plugins/` folder
 -- Here are some examples:
 
 ---@type LazySpec
 return {
+{
+    'pwntester/octo.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope.nvim',
+      'nvim-tree/nvim-web-devicons',
+    },
+    config = function()
+      require"octo".setup()
+    end
+  },
+
+
 
   -- == Examples of Adding Plugins ==
 
