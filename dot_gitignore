@@ -1,3 +1,6 @@
 *config*
 .DS*
 *tokens*
+
+# python
+.python-version
