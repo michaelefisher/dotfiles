@@ -101,10 +101,6 @@ merge() { gh pr merge "$1" --admin }
 if [[ -f /home/fisher/bin/tinymodt/data/motd ]]; then
     cat /home/fisher/bin/tinymodt/data/motd
 fi
-# motd supervision
-if [[ -f /home/fisher/bin/tinymodt/data/motd ]]; then
-    cat /home/fisher/bin/tinymodt/data/motd
-fi
 
 autoload -Uz compinit && compinit
 
