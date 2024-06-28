@@ -1,0 +1,62 @@
+#!/bin/bash
+#
+# To use from from the command line in any directory
+# move this script to a location in your PATH:
+# sudo mv start_ss_local.sh /usr/local/bin/start_ss_local
+#
+# To start sslocal:
+# start_ss_local start
+#
+# To stop sslocal:
+# start_ss_local stop
+
+# Check to see if SS_LOCAL_KEY is set
+if [ -z "$SS_LOCAL_KEY" ]; then
+  echo "SS_LOCAL_KEY is not set. Exiting."
+  exit 1
+fi
+
+# if sslocal is not running, and the start command is passed
+# start sslocal and exit
+if [ "$1" == "start" ]; then
+  # Check to see if sslocal is already running
+  if pgrep -x "sslocal" > /dev/null; then
+    echo "sslocal is already running. Exiting."
+    exit 1
+  fi
+  echo "Starting sslocal."
+# if sslocal is running, and the stop argument is passed,
+# kill the sslocal process and exit
+elif [ "$1" == "stop" ]; then
+  echo "Stopping sslocal."
+  pkill sslocal
+  exit 0
+elif [ "$1" == "status" ]; then
+  pid="$(pgrep -x "sslocal")"
+  if [ -z "$pid" ]; then
+    echo "sslocal is not running."
+  else
+    echo "sslocal is running with PID: $pid"
+  fi
+  exit 0
+else
+  # print usage
+  echo "Usage: start_ss_local [start|stop|status]"
+  exit 1
+fi
+
+
+# Start ss-local and send to background
+/snap/shadowsocks-rust/1011/bin/sslocal -b localhost:24087 --server-url "ss://${SS_LOCAL_KEY}"@35.208.112.214:24087/?outline=1 &
+
+# If ss-local command starts correctly,
+# background it and exit successfully
+if [ $? -eq 0 ]; then
+  echo "ss-local started successfully."
+  exit 0
+else
+  echo "ss-local failed to start."
+  exit 1
+fi
+
+
