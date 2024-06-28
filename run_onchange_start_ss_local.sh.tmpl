@@ -1,0 +1,15 @@
+{{ if eq .chezmoi.os "linux" -}}
+#!/bin/sh
+
+# move ./start_ss_local to /usr/local/bin/ss-local
+sudo mv "$HOME"/start_ss_local /usr/local/bin/ss-local
+sudo chmod +x /usr/local/bin/ss-local
+
+# if command executes successfully, print success message
+if [ $? -eq 0 ]; then
+    echo "ss-local installed successfully"
+else
+    echo "ss-local installation failed"
+fi
+{{- end }}
+
