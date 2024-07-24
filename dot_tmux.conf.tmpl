@@ -62,6 +62,7 @@ set-window-option -g aggressive-resize off
 set -g default-command "reattach-to-user-namespace -l $SHELL"
 {{ end }}
 
+set -g @plugin 'erikw/tmux-powerline'
 set -g history-limit 30000
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
