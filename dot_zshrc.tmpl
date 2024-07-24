@@ -103,7 +103,7 @@ if [[ -f /home/fisher/bin/tinymodt/data/motd ]]; then
     cat /home/fisher/bin/tinymodt/data/motd
 fi
 
-me() { if ! jq; then echo "Must have jq installed!" && exit 1; else curl -s ifconfig.me/all.json | jq; fi }
+me() { if jq -V &>/dev/null; then curl -s ifconfig.me/all.json | jq; else printf "Must have jq installed!\n" && return 0; fi; }
 
 reset() { if [ "$#" -lt 2 ]; then echo "Usage: reset branch-name file1 [file2 ... fileN]"; return 1; fi; local branch_name=$1; shift; for file in "$@"; do git checkout "$branch_name" -- "$file"; if [ $? -ne 0 ]; then echo "Failed to reset $file"; return 1; fi; done; git status; echo -n "Do you want to commit the changes? (yes/no) "; read confirmation; if [[ "$confirmation" == "yes" ]]; then git add "$@"; git commit -m "Reset changes to branch $branch_name" --no-verify; else echo "Changes not committed."; fi; }
 
