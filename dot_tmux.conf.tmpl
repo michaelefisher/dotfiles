@@ -45,15 +45,17 @@ bind p paste-buffer
 
 # List of default plugins
 set -g @plugin 'tmux-plugins/tpm'
-set -g @plugin 'tmux-plugins/tmux-sensible'
+#set -g @plugin 'tmux-plugins/tmux-sensible'
 
 # Add plugins here
 set -g @plugin 'tmux-plugins/tmux-yank'
-set -g @plugin 'seebi/tmux-colors-solarized'
+# set -g @plugin 'seebi/tmux-colors-solarized'
 set -g @plugin 'tmux-plugins/tmux-logging'
+set -g @plugin 'erikw/tmux-powerline'
 
 if "test ! -d ~/.tmux/plugins/tpm" \
    "run 'git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm && ~/.tmux/plugins/tpm/bin/install_plugins'"
+
 
 set -g @colors-solarized '256'
 set-window-option -g aggressive-resize off
@@ -62,7 +64,6 @@ set-window-option -g aggressive-resize off
 set -g default-command "reattach-to-user-namespace -l $SHELL"
 {{ end }}
 
-set -g @plugin 'erikw/tmux-powerline'
 set -g history-limit 30000
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
