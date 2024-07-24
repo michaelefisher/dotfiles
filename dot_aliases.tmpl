@@ -49,6 +49,9 @@ alias flushcache="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 # gcloud cli
 alias auth="gcloud auth login --update-adc --enable-gdrive-access --force --brief"
 
+# ifconfig
+alias="curl -s ifconfig.me/all.json | jq"
+
 # kubectl -n airbyte
 alias airbytectl="kubectl -n airbyte"
 alias lf="kubectl -n airbyte logs -f"
