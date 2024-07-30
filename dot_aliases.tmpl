@@ -29,6 +29,7 @@ else
 fi
 
 alias killdns="sudo killall -HUP mDNSResponder"
+alias k6op='kubectl -n k6-operator-system'
 
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
