@@ -1,13 +1,13 @@
 Host loris
    User fisher
-   Hostname upbeat-molybdenum-loris-98j5
+   Hostname upbeat-molybdenum-loris-pd7j
    ForwardAgent yes
    RequestTTY yes
    LocalForward 8080 localhost:8080
    LocalForward 8082 localhost:8082
    # Remove me after reach
    LocalForward 2018 localhost:2018
-
+   LocalForward 8089 localhost:8089
 {{- if eq .chezmoi.os "darwin" }}
 Host *
   StrictHostKeyChecking no
