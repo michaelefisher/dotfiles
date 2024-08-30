@@ -55,7 +55,7 @@ project=${gce_instance##*.}
 zone=${gce_instance#*.}; zone=${zone%.*}
 
 # ensure gcloud compute ssh command has worked recently, i.e., key is registered for project
-[[ $(date -r ~/.ssh/google_compute_engine."ssh-worked.$sshuser@$project" +%s 2>/dev/null || echo -1) -gt $(date -d "last week" +%s) ]] || (
+[[ $(date -r ~/.ssh/google_compute_engine."ssh-worked.$sshuser@$project" +%s 2>/dev/null || echo -1) -gt $(date -v -7d +%s) ]] || (
   # support registering ssh key for $sshuser (cf. https://console.cloud.google.com/compute/metadata?tab=sshkeys)
   set -x
   exec &>/dev/tty || true
