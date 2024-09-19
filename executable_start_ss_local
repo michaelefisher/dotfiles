@@ -47,7 +47,7 @@ fi
 
 
 # Start ss-local and send to background
-/snap/shadowsocks-rust/1011/bin/sslocal -b localhost:24087 --server-url "${SS_LOCAL_KEY}" &
+$(which sslocal) -b localhost:24087 --server-url "${SS_LOCAL_KEY}" &
 
 # If ss-local command starts correctly,
 # background it and exit successfully
