@@ -47,7 +47,7 @@ fi
 
 # If ss-local command starts correctly,
 # background it and exit successfully
-if $(which sslocal) -b localhost:24087 --server-url "${SS_LOCAL_KEY}" & ; then
+if $(which sslocal) -b localhost:24087 --server-url "${SS_LOCAL_KEY}" ; then
   echo "ss-local started successfully."
   exit 0
 else
