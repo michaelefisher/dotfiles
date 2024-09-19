@@ -45,18 +45,13 @@ else
   exit 1
 fi
 
-
-# Start ss-local and send to background
-$(which sslocal) -b localhost:24087 --server-url "${SS_LOCAL_KEY}" &
-
 # If ss-local command starts correctly,
 # background it and exit successfully
-if [ $? -eq 0 ]; then
+if $(which sslocal) -b localhost:24087 --server-url "${SS_LOCAL_KEY}" & ; then
   echo "ss-local started successfully."
   exit 0
 else
   echo "ss-local failed to start."
   exit 1
 fi
-
 
