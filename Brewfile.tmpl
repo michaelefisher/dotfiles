@@ -160,28 +160,30 @@ cask "font-hack-nerd-font"
 tap "buo/cask-upgrade"
 brew "reattach-to-user-namespace"
 cask "grammarly-desktop"
-cask "google-drive"
 cask "logi-options-plus"
 cask "logitune"
-cask "google-chrome"
 cask "omnidisksweeper"
-cask "signal"
 cask "visual-studio-code"
+{{ if eq .managed false -}}
+mas "Slack for Desktop", id: 803453959
 mas "1Password for Safari", id: 1569813296
+cask "google-drive"
+cask "signal"
+cask "google-chrome"
+mas "Mactracker", id: 430255202
+mas "Save to Pocket", id: 1477385213
+mas "Reeder", id: 1529448980
+mas "Vimari", id: 1480933944
+{{ end -}}
 mas "Boop", id: 1518425043
 mas "Caffeinated", id: 1362171212
 mas "Grammarly for Safari", id: 1462114288
 mas "Harvest", id: 506189836
 mas "HTTPBot", id: 1232603544
-mas "Mactracker", id: 430255202
-mas "Reeder", id: 1529448980
 mas "OpenIn", id: 1643649331
-mas "Save to Pocket", id: 1477385213
-mas "Vimari", id: 1480933944
 mas "Tailscale", id: 1475387142
 mas "WhatsApp", id: 1147396723
 mas "Grammarly: Writing App", id: 1462114288
 mas "SnippetsLab", id: 1006087419
-mas "Slack for Desktop", id: 803453959
 {{ end -}}
 
