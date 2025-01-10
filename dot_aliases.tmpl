@@ -56,6 +56,9 @@ alias auth="gcloud auth login --update-adc --enable-gdrive-access --force --brie
 alias airbytectl="kubectl -n airbyte"
 alias lf="kubectl -n airbyte logs -f"
 
+# tmux ssh
+alias loris="ssh loris -t 'tmux -CC attach || tmux -CC new'"
+
 {{ if eq .chezmoi.os "darwin" }}
 # Tailscale
 alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
