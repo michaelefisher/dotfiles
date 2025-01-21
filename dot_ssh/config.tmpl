@@ -7,6 +7,8 @@ Host loris
    LocalForward 8082 localhost:8082
    # Remove me after phish
    LocalForward 3333 localhost:3333
+   # Remove me after prowler
+   LocalForward 3000 localhost:3000
 {{- if eq .chezmoi.os "darwin" }}
 Host *
   StrictHostKeyChecking no
