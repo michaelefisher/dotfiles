@@ -54,9 +54,9 @@ if [ -f "${HOME}/google-cloud-sdk/path.zsh.inc" ]; then . "${HOME}/google-cloud-
 if [ -f "${HOME}/google-cloud-sdk/completion.zsh.inc" ]; then . "${HOME}/google-cloud-sdk/completion.zsh.inc"; fi
 
 # git
-fixup() { /usr/bin/git commit -m "noop" --no-verify --allow-empty && /usr/bin/git rebase -i "$@" ; }
-ac() { test "$@" != "" && /usr/bin/git add . && /usr/bin/git commit -m "$@" --no-verify ; }
-restore_all() { /usr/bin/git st -s | cut -d' ' -f2 | xargs -L1 /usr/bin/git restore ; }
+fixup() { git commit -m "noop" --no-verify --allow-empty && git rebase -i "$@" ; }
+ac() { test "$@" != "" && git add . && git commit -m "$@" --no-verify ; }
+restore_all() { git st -s | cut -d' ' -f2 | xargs -L1 git restore ; }
 
 # urldecode
 urldecode() { : "${*//+/ }"; echo -e "${_//%/\\x}"; }
