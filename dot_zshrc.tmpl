@@ -30,7 +30,7 @@ bindkey "^E" vi-end-of-line
 
 # Export PATH here
 {{ if eq .chezmoi.os "linux" -}}
-export PATH="/usr/local/sbin:/usr/local/opt/openjdk/bin:$HOME/.pyenv/shims/:$HOME/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/bin:$HOME/bin:$HOME/google-cloud-sdk/bin:$PATH"
+export PATH="/usr/local/sbin:/usr/local/opt/openjdk/bin:$HOME/.pyenv/shims/:$HOME/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/bin:$HOME/bin:$HOME/google-cloud-sdk/bin:$HOME/codeql-home/codeql:$PATH"
 export DOCKER_HOST=unix:///run/user/1000/docker.sock
 {{ else }}
 export PATH="/usr/local/sbin:/usr/local/opt/openjdk/bin:$HOME/.pyenv/shims/:$HOME/bin/:/opt/homebrew/bin/:$HOME/go/bin:/opt:$HOME/.deno/bin/:$PATH"
