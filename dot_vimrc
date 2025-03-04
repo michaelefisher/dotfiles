@@ -34,6 +34,7 @@ Plug 'tmhedberg/SimpylFold'
 Plug 'Quramy/tsuquyomi'
 Plug 'metakirby5/codi.vim'
 Plug 'github/copilot.vim'
+Plug 'pasky/claude.vim'
 " Plug 'vimwiki/vimwiki'
 " Install your sources
 "Plug 'Shougo/ddc-source-around'
