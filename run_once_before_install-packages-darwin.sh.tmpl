@@ -1,5 +1,5 @@
 {{- if eq .chezmoi.os "darwin" -}}
 #!/bin/bash
 
-brew bundle --no-lock --file=/Users/fisher/Brewfile
+brew bundle --cleanup --file=/Users/fisher/Brewfile
 {{ end -}}
