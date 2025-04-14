@@ -21,12 +21,12 @@
 #    url = "https://az764295.vo.msecnd.net/stable/2ccd690cbff1569e4a83d7c43d45101f817401dc/vscode_cli_alpine_x64_cli.tar.gz"
 #    stripComponents = 1
 #    refreshPeriod = "700h"
-[".asdf"]
-    url = "https://github.com/asdf-vm/asdf/archive/master.tar.gz"
-    type = "archive"
-    extract = true
-    stripComponents = 1
-    refreshPeriod = "168h"
+#[".asdf"]
+#    url = "https://github.com/asdf-vm/asdf/archive/master.tar.gz"
+#    type = "archive"
+#    extract = true
+#    stripComponents = 1
+#    refreshPeriod = "168h"
 [".config/nvim/pack/github/start/copilot.vim"]
     url = "https://github.com/github/copilot.vim/archive/master.tar.gz"
     type = "archive"
