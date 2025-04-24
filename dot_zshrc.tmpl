@@ -136,5 +136,8 @@ if command -v rbenv 1>/dev/null 2>&1; then
     eval "$(rbenv init -)"
 fi
 
+# Go
+export GO111MODULE=auto
+
 autoload -Uz compinit && compinit
 
