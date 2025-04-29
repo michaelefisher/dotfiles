@@ -3,6 +3,7 @@ Host loris
    Hostname upbeat-molybdenum-loris-fjtw
    ForwardAgent yes
    RequestTTY yes
+   LocalForward 4000 localhost:4000
 {{- if eq .chezmoi.os "darwin" }}
 Host *
   StrictHostKeyChecking no
