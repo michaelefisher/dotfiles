@@ -31,10 +31,6 @@ bindkey "^E" vi-end-of-line
 # Export PATH here
 export PATH="/usr/local/sbin:/usr/local/opt/openjdk/bin:$HOME/.pyenv/shims/:$HOME/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/bin:$HOME/bin:$HOME/google-cloud-sdk/bin:$HOME/codeql-home/codeql:$PATH"
 
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-export CLOUDSDK_PYTHON=$(pyenv which python)
-eval "$(pyenv init -)"
 
 {{ if eq .chezmoi.os "darwin" -}}
   export LDFLAGS="-L/usr/local/opt/bzip2/lib -L/usr/local/opt/zlib/lib -L/usr/local/opt/openssl@1.1/lib"
@@ -58,18 +54,8 @@ urldecode() { : "${*//+/ }"; echo -e "${_//%/\\x}"; }
 # view octal
 octal() { stat -f "%OLp" $1; }
 
-if [ $(ps ax | grep "[s]sh-agent" | wc -l) -eq 0 ] ; then
-    eval $(ssh-agent -s) > /dev/null
-    if [ "$(ssh-add -l)" = "The agent has no identities." ] ; then
-        # Auto-add ssh keys to ssh agent
-        ssh-add ~/.ssh/id_ed25519 > /dev/null 2>&1
-    fi
-fi
-
 # Activate gcloud configs
 activate() { gcloud config configurations activate "$@" ; }
-# Sign in to op
-signin() { eval $(op signin "$@") ; }
 
 {{ if eq .chezmoi.os "darwin"  -}}
 # motd supervision
@@ -88,8 +74,11 @@ creds() {
 	gcloud container clusters get-credentials "$1" --zone us-central1-a --project "$2"
 }
 
-# Start starship
-eval "$(starship init zsh)"
+if [[ ! -f "$HOME/.cache/starship.zsh" || /usr/local/bin/starship -nt "$HOME/.cache/starship.zsh" ]]; then
+	starship init zsh > "$HOME/.cache/starship.zsh"
+fi
+source "$HOME/.cache/starship.zsh"
+
 
 merge() { gh pr merge "$1" --admin }
 
@@ -120,15 +109,24 @@ squash() {
     fi
 }
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+pyenv() {
+    unset -f pyenv
+    eval "$(command pyenv init -)"
+    pyenv "$@"
+}
 
-# Loads rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-if command -v rbenv 1>/dev/null 2>&1; then
-    eval "$(rbenv init -)"
-fi
+export NVM_DIR="$HOME/.nvm"
+nvm() {
+    unset -f nvm
+    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+    nvm "$@"
+}
+
+rbenv() {
+    unset -f rbenv
+    eval "$(command rbenv init -)"
+    rbenv "$@"
+}
 
 # Go
 export GO111MODULE=auto
@@ -148,5 +146,10 @@ export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-autoload -Uz compinit && compinit
+autoload -Uz compinit
+if [[ -n ${ZDOTDIR}/.zcompdump(#qNmh+24) ]]; then
+    compinit
+else
+    compinit -C
+fi
 
