@@ -1,8 +1,0 @@
-[core]
-account = fisher@stderr.tech
-project = stderr-dev
-
-[billing/quota_project]
-project = stderr-dev
-
-
