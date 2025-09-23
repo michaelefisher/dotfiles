@@ -67,3 +67,7 @@ alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
 {{ if eq .chezmoi.os "linux" }}
 alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 {{ end }}
+
+alias gcloud='docker run -ti -e CLOUDSDK_CONFIG=/config/docker/gcloud \
+              -v `pwd`/docker/gcloud:/config/docker/gcloud \
+              -v `pwd`:/certs  gcr.io/google.com/cloudsdktool/google-cloud-cli:stable gcloud'
