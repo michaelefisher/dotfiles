@@ -1,0 +1,9 @@
+#!/usr/bin/env zsh
+
+if [[ -z "$PYENV_SHELL" ]]; then
+    unfunction pyenv
+    eval "$(command pyenv init -)"
+    command pyenv "$@"
+else
+    command pyenv "$@"
+fi

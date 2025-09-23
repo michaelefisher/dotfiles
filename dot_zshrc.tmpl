@@ -3,6 +3,12 @@ if [ -f ~/.aliases ]; then
     source ~/.aliases
 fi
 
+# Register autoloads
+fpath=($HOME/.zsh/autoloads $fpath)
+for f in $(ls $HOME/.zsh/autoloads); do
+    autoload $f
+done
+
 export HISTTIMEFORMAT='%d/%m/%y %T '
 if [[ "$TERM_PROGRAM" == 'vscode' ]]; then
 	export EDITOR="code --wait"
@@ -20,7 +26,7 @@ function timestamp() {
 }
 
 # z.sh
-z() { . "{{ .chezmoi.homeDir }}/bin/z/z.sh" "$@" ; }
+z() { . "/Users/michaelfisher/bin/z/z.sh" "$@" ; }
 
 bindkey -v
 bindkey '^R' history-incremental-search-backward
@@ -32,11 +38,8 @@ bindkey "^E" vi-end-of-line
 export PATH="/usr/local/sbin:/usr/local/opt/openjdk/bin:$HOME/.pyenv/shims/:$HOME/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/bin:$HOME/bin:$HOME/google-cloud-sdk/bin:$HOME/codeql-home/codeql:$PATH"
 
 
-{{ if eq .chezmoi.os "darwin" -}}
-  export LDFLAGS="-L/usr/local/opt/bzip2/lib -L/usr/local/opt/zlib/lib -L/usr/local/opt/openssl@1.1/lib"
-  export CFLAGS="-I/usr/local/opt/bzip2/include -I/usr/local/opt/zlib/include -I/usr/local/opt/openssl@1.1/include -I$(xcrun --show-sdk-path)/usr/include -Wno-implicit-function-declaration"
-{{ end -}}
-
+export LDFLAGS="-L/usr/local/opt/bzip2/lib -L/usr/local/opt/zlib/lib -L/usr/local/opt/openssl@1.1/lib"
+export CFLAGS="-I/usr/local/opt/bzip2/include -I/usr/local/opt/zlib/include -I/usr/local/opt/openssl@1.1/include -I$(xcrun --show-sdk-path)/usr/include -Wno-implicit-function-declaration"
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "${HOME}/google-cloud-sdk/path.zsh.inc" ]; then . "${HOME}/google-cloud-sdk/path.zsh.inc"; fi
 
@@ -57,18 +60,10 @@ octal() { stat -f "%OLp" $1; }
 # Activate gcloud configs
 activate() { gcloud config configurations activate "$@" ; }
 
-{{ if eq .chezmoi.os "darwin"  -}}
 # motd supervision
 if [[ -f /home/fisher/git/tinymotd/data/motd ]]; then
     cat /home/fisher/git/tinymotd/data/motd
 fi
-{{ end -}}
-
-{{ if eq .chezmoi.os "linux" -}}
-test -f $HOME/.config/op/plugins.sh && source $HOME/.config/op/plugins.sh
-test -f /usr/share/google-cloud-sdk/completion.zsh.inc && source /usr/share/google-cloud-sdk/completion.zsh.inc
-{{ end -}}
-
 # k8s
 creds() {
 	gcloud container clusters get-credentials "$1" --zone us-central1-a --project "$2"
@@ -109,34 +104,19 @@ squash() {
     fi
 }
 
-pyenv() {
-    unset -f pyenv
-    eval "$(command pyenv init -)"
-    pyenv "$@"
-}
+# Lazy loading handled by autoloads
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 
 export NVM_DIR="$HOME/.nvm"
-nvm() {
-    unset -f nvm
-    [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-    nvm "$@"
-}
 
-rbenv() {
-    unset -f rbenv
-    eval "$(command rbenv init -)"
-    rbenv "$@"
-}
+export PATH="$HOME/.rbenv/bin:$PATH"
 
 # Go
 export GO111MODULE=auto
 
 # pnpm
-{{ if eq .chezmoi.os "darwin" -}}
 export PNPM_HOME="$HOME/Library/pnpm"
-{{ else }}
-export PNPM_HOME="$HOME/.pnpm"
-{{ end -}}
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;

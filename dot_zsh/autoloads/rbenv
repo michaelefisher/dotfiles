@@ -1,0 +1,10 @@
+#!/usr/bin/env zsh
+
+if [[ -z "$RBENV_SHELL" ]]; then
+    unfunction rbenv
+    export PATH="$HOME/.rbenv/bin:$PATH"
+    eval "$(command rbenv init -)"
+    command rbenv "$@"
+else
+    command rbenv "$@"
+fi
