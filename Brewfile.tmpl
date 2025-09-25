@@ -1,4 +1,4 @@
-msodbcsql18tap "hashicorp/tap"
+tap "hashicorp/tap"
 tap "microsoft/mssql-release" "https://github.com/Microsoft/homebrew-mssql-release"
 tap "pulumi/tap"
 brew "asdf"
@@ -161,7 +161,7 @@ brew "yq"
 {{ if eq .work true -}}
 brew "msodbcsql18"
 brew "mssql-tools18"
-{{ end }}
+{{ end -}}
 cask "1password-cli"
 cask "font-hack-nerd-font"
 {{ if eq .chezmoi.os "darwin" -}}
