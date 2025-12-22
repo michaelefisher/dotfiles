@@ -1,0 +1,249 @@
+set nocompatible              " be iMproved, required
+filetype off
+
+" Install vim-plug if we don't already have it
+if empty(glob('~/vimfiles/autoload/plug.vim'))
+silent !curl -fLo ~/vimfiles/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+
+call plug#begin('~/vimfiles/plugged')
+" alternatively, pass a path where Vundle should install plugins
+
+" The following are examples of different formats supported.
+
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+Plug 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+" Plug 'ascenator/L9', {'name': 'newL9'}
+
+Plug 'scrooloose/nerdtree'
+Plug 'itchyny/lightline.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'airblade/vim-gitgutter'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'aluriak/nerdcommenter'
+Plug 'chrisbra/csv.vim'
+" Plug 'vim-syntastic/syntastic'
+" Plug 'vim-scripts/indentpython.vim'
+Plug 'tmhedberg/SimpylFold'
+Plug 'Quramy/tsuquyomi'
+Plug 'metakirby5/codi.vim'
+Plug 'github/copilot.vim'
+Plug 'pasky/claude.vim'
+" Plug 'vimwiki/vimwiki'
+" Install your sources
+"Plug 'Shougo/ddc-source-around'
+
+" Install your filters
+"Plug 'Shougo/ddc-matcher_head'
+"Plug 'Shougo/ddc-sorter_rank'
+
+" Frontend
+Plug 'eslint/eslint'
+Plug 'flowtype/vim-flow'
+
+" All of your Plugs must be added before the following line
+call plug#end()
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PlugList       - lists configured plugins
+" :PlugInstall    - installs plugins; append `!` to update or just :PlugUpdate
+" :PlugSearch foo - searches for foo; append `!` to refresh local cache
+" :PlugClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" Put your non-Plug stuff after this line
+
+" Clipboard stuff
+noremap <Leader>y "*y
+noremap <Leader>p "*p
+noremap <Leader>Y "+y
+noremap <Leader>P "+p
+set clipboard=unnamedplus
+
+syntax on
+filetype plugin indent on
+set mouse=a
+"set ttymouse=xterm2
+" set tabs to 2
+set tabstop=4
+set nu
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+set t_Co=256
+
+let g:gitgutter_max_signs = 500  " default value
+
+" Remap esc
+inoremap jj <esc>
+
+
+" install syntastic
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:airline_powerline_fonts = 1
+if !exists('g:airline_symbols')
+	let g:airline_symbols = {}
+endif
+
+" unicode symbols
+let g:airline_left_sep = '»'
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '«'
+let g:airline_right_sep = '◀'
+let g:airline_symbols.linenr = '␊'
+let g:airline_symbols.linenr = '␤'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.branch = '⎇'
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.paste = 'Þ'
+let g:airline_symbols.paste = '∥'
+let g:airline_symbols.whitespace = 'Ξ'
+
+" airline symbols
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
+
+let g:airline#extensions#tabline#enabled = 1
+
+function! AirlineInit()
+	let g:airline_section_a = airline#section#create(['mode', ' ', 'branch'])
+	let g:airline_section_b = airline#section#create_left(['ffenc','hunks','%f'])
+	let g:airline_section_c = airline#section#create(['filetype'])
+	let g:airline_section_x = airline#section#create(['%P'])
+	let g:airline_section_y = airline#section#create(['%B'])
+	let g:airline_section_z = airline#section#create_right(['%f','%c'])
+endfunction
+autocmd VimEnter * call AirlineInit()
+
+" install gitgutter
+let g:gitgutter_sign_added = 'xx'
+let g:gitgutter_sign_modified = 'yy'
+let g:gitgutter_sign_removed = 'zz'
+let g:gitgutter_sign_removed_first_line = '^^'
+let g:gitgutter_sign_modified_removed = 'ww'
+
+" tmp files
+set directory=/tmp
+let NERDTreeShowHidden=1
+
+autocmd BufWritePre * %s/\s\+$//e
+
+map  <C-t> :bnext<CR>
+map  <C-p> :bprev<CR>
+map  <C-l> :ls<CR>
+
+let g:airline_powerline_fonts = 1
+
+
+let g:multi_cursor_use_default_mapping=1
+
+" Default mapping
+let g:multi_cursor_start_word_key      = '<C-n>'
+let g:multi_cursor_select_all_word_key = '<A-n>'
+let g:multi_cursor_start_key           = 'g<C-n>'
+let g:multi_cursor_select_all_key      = 'g<A-n>'
+let g:multi_cursor_next_key            = '<C-n>'
+let g:multi_cursor_prev_key            = '<C-p>'
+let g:multi_cursor_skip_key            = '<C-x>'
+let g:multi_cursor_quit_key            = '<Esc>'
+
+" Python indentation
+au BufNewFile,BufRead *.py
+    \ set tabstop=4 |
+    \ set softtabstop=4 |
+    \ set shiftwidth=4 |
+    \ set textwidth=79 |
+    \ set expandtab |
+    \ set autoindent |
+    \ set fileformat=unix |
+    \ set filetype=python |
+
+" shell scripts
+au BufNewFile,BufRead *.sh
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
+    \ set expandtab |
+    \ set foldmethod=syntax |
+    \ set filetype=sh |
+
+" html
+au BufNewFile,BufRead *.{htm,html}
+    \ set filetype=html |
+    \ set expandtab |
+    \ set foldmethod=syntax |
+    \ set filetype=html |
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
+
+" css
+au BufNewFile,BufRead *.{css,scss}
+    \ set filetype=css |
+    \ set expandtab |
+    \ set foldmethod=syntax |
+    \ set filetype=css |
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
+
+" js
+au BufNewFile,BufRead *.{js,jsx,ts}
+    \ set filetype=javascript |
+    \ set expandtab |
+    \ set foldmethod=syntax |
+    \ set tabstop=2 |
+    \ set softtabstop=2 |
+    \ set shiftwidth=2 |
+
+" add yaml stuffs
+au BufNewFile,BufReadPost *.{yaml,yml}
+   \ set filetype=yaml |
+   \ set foldmethod=indent |
+   \ set tabstop=2 |
+   \ set softtabstop=2 |
+   \ set shiftwidth=2 |
+   \ set expandtab |
+
+" absolute width of netrw window
+let g:netrw_winsize = -38
+
+" do not display info on the top of window
+let g:netrw_banner = 0
+
+" tree-view
+let g:netrw_liststyle = 3
+
+" sort is affecting only: directories on the top, files below
+let g:netrw_sort_sequence = '[\/]$,*'
+
+" use the previous window to open file
+let g:netrw_browse_split = 2
+
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+let g:chezmoi = "enabled"
+
+nmap <leader>n :NERDTreeToggle<CR>
+let NERDTreeQuitOnOpen=1
+
+" Auto-apply chezmoi
+autocmd BufWritePost ~/.local/share/chezmoi/* ! chezmoi apply --source-path "%"
