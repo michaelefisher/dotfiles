@@ -1,0 +1,38 @@
+# PowerShell Profile
+# This file is managed by chezmoi
+
+# Set encoding
+[Console]::OutputEncoding = [System.Text.Encoding]::UTF8
+
+# Aliases
+Set-Alias -Name vim -Value nvim -ErrorAction SilentlyContinue
+Set-Alias -Name vi -Value nvim -ErrorAction SilentlyContinue
+
+# Functions
+function prompt {
+    $location = Get-Location
+    Write-Host "PS " -NoNewline -ForegroundColor Green
+    Write-Host "$location" -NoNewline -ForegroundColor Cyan
+    Write-Host ">" -NoNewline -ForegroundColor Green
+    return " "
+}
+
+# Git shortcuts
+function gst { git status }
+function gco { param($branch) git checkout $branch }
+function gpl { git pull }
+function gps { git push }
+
+# Navigation shortcuts
+function .. { Set-Location .. }
+function ... { Set-Location ../.. }
+function .... { Set-Location ../../.. }
+
+# List files with colors
+function ll { Get-ChildItem -Force }
+function la { Get-ChildItem -Force }
+
+# Clear screen shortcut
+function c { Clear-Host }
+
+Write-Host "PowerShell profile loaded!" -ForegroundColor Green
