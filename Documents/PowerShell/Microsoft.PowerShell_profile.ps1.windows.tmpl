@@ -4,10 +4,6 @@
 # Set encoding
 [Console]::OutputEncoding = [System.Text.Encoding]::UTF8
 
-# Aliases
-Set-Alias -Name vim -Value nvim -ErrorAction SilentlyContinue
-Set-Alias -Name vi -Value nvim -ErrorAction SilentlyContinue
-
 # Functions
 function prompt {
     $location = Get-Location
@@ -36,3 +32,6 @@ function la { Get-ChildItem -Force }
 function c { Clear-Host }
 
 Write-Host "PowerShell profile loaded!" -ForegroundColor Green
+
+Invoke-Expression (&starship init powershell)
+
