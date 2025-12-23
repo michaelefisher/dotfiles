@@ -1,0 +1,4 @@
+{{- if eq .chezmoi.os "windows" -}}
+{{- template "powershell-profile.ps1" . -}}
+{{- end -}}
+

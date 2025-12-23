@@ -34,4 +34,3 @@ function c { Clear-Host }
 Write-Host "PowerShell profile loaded!" -ForegroundColor Green
 
 Invoke-Expression (&starship init powershell)
-
