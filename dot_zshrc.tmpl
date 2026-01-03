@@ -117,6 +117,13 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 # Go
 export GO111MODULE=auto
 
+# tmux ssh config
+ssh() {
+    local machine="$1"
+    shift
+    ssh "$machine" "$@" -t 'tmux -CC attach || tmux -CC new'
+}
+
 # pnpm
 export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
