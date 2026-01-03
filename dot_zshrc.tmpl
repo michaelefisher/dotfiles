@@ -121,7 +121,7 @@ export GO111MODULE=auto
 ssh() {
     local machine="$1"
     shift
-    ssh "$machine" "$@" -t 'tmux -CC attach || tmux -CC new'
+    command ssh "$machine" "$@" -t 'tmux -CC attach || tmux -CC new'
 }
 
 # pnpm
