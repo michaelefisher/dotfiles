@@ -135,6 +135,9 @@ export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
+# Docker autocomplete
+FPATH="$HOME/.docker/completions:$FPATH"
+
 autoload -Uz compinit
 if [[ -n ${ZDOTDIR}/.zcompdump(#qNmh+24) ]]; then
     compinit
