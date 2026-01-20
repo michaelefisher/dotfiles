@@ -1,0 +1,34 @@
+#!/bin/bash
+
+set -e
+
+TAILSCALE_VERSION="1.92.3"
+TAILSCALE_URL="https://pkgs.tailscale.com/stable/Tailscale-${TAILSCALE_VERSION}-macos.zip"
+TAILSCALE_APP="/Applications/Tailscale.app"
+
+echo "Checking for Tailscale installation..."
+
+# Check if Tailscale is already installed
+if [ -d "${TAILSCALE_APP}" ]; then
+    echo "Tailscale is already installed at ${TAILSCALE_APP}"
+    exit 0
+fi
+
+echo "Downloading Tailscale ${TAILSCALE_VERSION}..."
+TEMP_DIR=$(mktemp -d)
+TEMP_ZIP="${TEMP_DIR}/Tailscale.zip"
+
+# Download the zip file
+curl -L -o "${TEMP_ZIP}" "${TAILSCALE_URL}"
+
+echo "Extracting Tailscale..."
+unzip -q "${TEMP_ZIP}" -d "${TEMP_DIR}"
+
+echo "Installing Tailscale to /Applications..."
+# Move the app to /Applications
+mv "${TEMP_DIR}/Tailscale.app" "${TAILSCALE_APP}"
+
+echo "Cleaning up temporary files..."
+rm -rf "${TEMP_DIR}"
+
+echo "Tailscale ${TAILSCALE_VERSION} has been successfully installed!"

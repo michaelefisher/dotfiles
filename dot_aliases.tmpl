@@ -52,19 +52,10 @@ alias flushcache="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 # gcloud cli
 alias auth="gcloud auth login --update-adc --enable-gdrive-access --force --brief"
 
-# kubectl -n airbyte
-alias airbytectl="kubectl -n airbyte"
-alias lf="kubectl -n airbyte logs -f"
-
-# tmux ssh
-alias loris="ssh loris -t 'tmux -CC attach || tmux -CC new'"
-
-{{ if eq .chezmoi.os "darwin" }}
-# Tailscale
-alias tailscale="/Applications/Tailscale.app/Contents/MacOS/Tailscale"
-{{ end }}
-
 {{ if eq .chezmoi.os "linux" }}
 alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 {{ end }}
 
+{{ if eq .chezmoi.os "darwin" }}
+alias update='HOMEBREW_ACCEPT_EULA=Y brew bundle'
+{{ end }}
