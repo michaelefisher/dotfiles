@@ -1,0 +1,219 @@
+{
+  "numStartups": 11,
+  "installMethod": "global",
+  "tipsHistory": {
+    "new-user-warmup": 7,
+    "plan-mode-for-complex-tasks": 7,
+    "terminal-setup": 2,
+    "memory-command": 2,
+    "theme-command": 2,
+    "status-line": 2,
+    "stickers-command": 2,
+    "prompt-queue": 7,
+    "enter-to-steer-in-relatime": 2,
+    "todo-list": 2,
+    "install-github-app": 2,
+    "install-slack-app": 3,
+    "drag-and-drop-images": 3,
+    "double-esc-code-restore": 3,
+    "continue": 3,
+    "shift-tab": 3,
+    "image-paste": 4,
+    "ultrathink-keyword": 4,
+    "ide-upsell-external-terminal": 5,
+    "desktop-app": 5,
+    "web-app": 5,
+    "custom-agents": 6,
+    "mobile-app": 7,
+    "permissions": 11,
+    "rename-conversation": 11,
+    "custom-commands": 11
+  },
+  "promptQueueUseCount": 2,
+  "cachedStatsigGates": {
+    "tengu_prompt_suggestion": true
+  },
+  "cachedGrowthBookFeatures": {
+    "tengu_sumi": false,
+    "tengu_1p_event_batch_config": {},
+    "tengu_mcp_tool_search": true,
+    "tengu_scratch": false,
+    "tengu_disable_bypass_permissions_mode": false,
+    "tengu_log_segment_events": false,
+    "tengu_log_datadog_events": false,
+    "tengu_event_sampling_config": {},
+    "tengu_tool_pear": false,
+    "tengu_c4w_usage_limit_notifications_enabled": false,
+    "tengu_thinkback": false,
+    "tengu-top-of-feed-tip": {
+      "tip": "",
+      "color": "dim"
+    },
+    "tengu_react_vulnerability_warning": false,
+    "tengu_code_diff_cli": false,
+    "tengu_post_compact_survey": false,
+    "tengu_tool_search_unsupported_models": null,
+    "tengu_ant_attribution_header_new": false,
+    "enhanced_telemetry_beta": false,
+    "tengu_streaming_tool_execution2": false,
+    "tengu_vscode_review_upsell": false,
+    "tengu_vscode_onboarding": false,
+    "tengu_pid_based_version_locking": false,
+    "tengu_session_memory": false
+  },
+  "userID": "36cd8e17b225ea41bda516f14d3d6a6691cb0ca86dfd66b2e18bfa25cfe8cb59",
+  "firstStartTime": "2026-01-14T15:54:43.772Z",
+  "sonnet45MigrationComplete": true,
+  "opus45MigrationComplete": true,
+  "opusProMigrationComplete": true,
+  "thinkingMigrationComplete": true,
+  "cachedChromeExtensionInstalled": false,
+  "changelogLastFetched": 1768584433468,
+  "oauthAccount": {
+    "accountUuid": "5376f958-10f3-4e1a-8a2f-733cd8bd8f22",
+    "emailAddress": "mfisher@oestech.io",
+    "organizationUuid": "3b39212a-9276-4b2f-af51-81524993c1f4",
+    "hasExtraUsageEnabled": true,
+    "displayName": "Fisher",
+    "organizationRole": "user",
+    "workspaceRole": null,
+    "organizationName": "Schmidt Entities"
+  },
+  "claudeCodeFirstTokenDate": "2025-11-05T15:46:19.439811Z",
+  "hasCompletedOnboarding": true,
+  "lastOnboardingVersion": "2.1.7",
+  "projects": {
+    "C:/Users/fisher/data-ingestion": {
+      "allowedTools": [],
+      "mcpContextUris": [],
+      "mcpServers": {
+        "powerbi-modeling-mcp": {
+	      "command": "C:\\Users\\fisher\\extension\\server\\powerbi-modeling-mcp.exe",
+          "args": [
+            "--start"
+          ],
+          "env": {}
+        }
+      },
+      "enabledMcpjsonServers": [],
+      "disabledMcpjsonServers": [],
+      "hasTrustDialogAccepted": true,
+      "projectOnboardingSeenCount": 1,
+      "hasClaudeMdExternalIncludesApproved": false,
+      "hasClaudeMdExternalIncludesWarningShown": false,
+      "reactVulnerabilityCache": {
+        "detected": false,
+        "package": null,
+        "packageName": null,
+        "version": null,
+        "packageManager": null
+      },
+      "lastCost": 0.37232999999999994,
+      "lastAPIDuration": 66752,
+      "lastAPIDurationWithoutRetries": 66734,
+      "lastToolDuration": 15845,
+      "lastDuration": 589761,
+      "lastLinesAdded": 0,
+      "lastLinesRemoved": 0,
+      "lastTotalInputTokens": 361,
+      "lastTotalOutputTokens": 2768,
+      "lastTotalCacheCreationInputTokens": 62754,
+      "lastTotalCacheReadInputTokens": 318385,
+      "lastTotalWebSearchRequests": 0,
+      "lastModelUsage": {
+        "claude-haiku-4-5-20251001": {
+          "inputTokens": 283,
+          "outputTokens": 55,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 0.000558
+        },
+        "claude-sonnet-4-5-20250929": {
+          "inputTokens": 78,
+          "outputTokens": 2713,
+          "cacheReadInputTokens": 318385,
+          "cacheCreationInputTokens": 62754,
+          "webSearchRequests": 0,
+          "costUSD": 0.37177199999999994
+        }
+      },
+      "lastSessionId": "ab1cea27-8dc1-4518-8bd1-f12edfc3d0af",
+      "hasCompletedProjectOnboarding": true
+    },
+    "C:/Users/fisher": {
+      "allowedTools": [],
+      "mcpContextUris": [],
+      "mcpServers": {},
+      "enabledMcpjsonServers": [],
+      "disabledMcpjsonServers": [],
+      "hasTrustDialogAccepted": false,
+      "projectOnboardingSeenCount": 0,
+      "hasClaudeMdExternalIncludesApproved": false,
+      "hasClaudeMdExternalIncludesWarningShown": false,
+      "exampleFiles": [],
+      "reactVulnerabilityCache": {
+        "detected": false,
+        "package": null,
+        "packageName": null,
+        "version": null,
+        "packageManager": null
+      },
+      "lastCost": 0.02035465,
+      "lastAPIDuration": 5328,
+      "lastAPIDurationWithoutRetries": 5323,
+      "lastToolDuration": 0,
+      "lastDuration": 205063,
+      "lastLinesAdded": 0,
+      "lastLinesRemoved": 0,
+      "lastTotalInputTokens": 141,
+      "lastTotalOutputTokens": 229,
+      "lastTotalCacheCreationInputTokens": 3285,
+      "lastTotalCacheReadInputTokens": 15773,
+      "lastTotalWebSearchRequests": 0,
+      "lastModelUsage": {
+        "claude-haiku-4-5-20251001": {
+          "inputTokens": 132,
+          "outputTokens": 29,
+          "cacheReadInputTokens": 0,
+          "cacheCreationInputTokens": 0,
+          "webSearchRequests": 0,
+          "costUSD": 0.000277
+        },
+        "claude-sonnet-4-5-20250929": {
+          "inputTokens": 9,
+          "outputTokens": 200,
+          "cacheReadInputTokens": 15773,
+          "cacheCreationInputTokens": 3285,
+          "webSearchRequests": 0,
+          "costUSD": 0.02007765
+        }
+      },
+      "lastSessionId": "46e3cd51-b924-44a7-abd3-54deb6f9dc81"
+    }
+  },
+  "githubRepoPaths": {
+    "stderrtech/data-ingestion": [
+      "C:\\Users\\fisher\\data-ingestion"
+    ]
+  },
+  "lastReleaseNotesSeen": "2.1.9",
+  "hasShownOpus45Notice": {
+    "3b39212a-9276-4b2f-af51-81524993c1f4": true
+  },
+  "officialMarketplaceAutoInstallAttempted": true,
+  "officialMarketplaceAutoInstalled": true,
+  "s1mAccessCache": {
+    "3b39212a-9276-4b2f-af51-81524993c1f4": {
+      "hasAccess": false,
+      "hasAccessNotAsDefault": true,
+      "timestamp": 1768614145218
+    }
+  },
+  "hasShownS1MWelcomeV2": {
+    "3b39212a-9276-4b2f-af51-81524993c1f4": true
+  },
+  "feedbackSurveyState": {
+    "lastShownTime": 1768607664093
+  }
+}
