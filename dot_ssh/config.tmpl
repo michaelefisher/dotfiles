@@ -7,13 +7,12 @@ Host loris
    LocalForward 3000 localhost:3000
    LocalForward 8000 localhost:8000
 Host windows
-    HostName 34.86.141.222
-    IdentityFile /Users/michaelfisher/.ssh/google_compute_engine
-    UserKnownHostsFile=/Users/michaelfisher/.ssh/google_compute_known_hosts
-    HostKeyAlias=compute.2826898149633312464
-    IdentitiesOnly=yes
-    CheckHostIP=no
-	ProxyCommand ~/.pyenv/versions/3.12.11/bin/python3 -S ~/google-cloud-sdk/lib/gcloud.py compute start-iap-tunnel 'windows-vm' '%p' --listen-on-stdin --project=stderr-dev --zone=us-east4-a --verbosity=warning
+   HostName 34.86.141.222
+   IdentityFile /Users/michaelfisher/.ssh/google_compute_engine
+   UserKnownHostsFile=/Users/michaelfisher/.ssh/google_compute_known_hosts
+   HostKeyAlias=compute.2826898149633312464
+   IdentitiesOnly=yes
+   CheckHostIP=no
 {{- if eq .chezmoi.os "darwin" }}
 Host *
   StrictHostKeyChecking no
