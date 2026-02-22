@@ -57,5 +57,5 @@ alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 {{ end }}
 
 {{ if eq .chezmoi.os "darwin" }}
-alias update='HOMEBREW_ACCEPT_EULA=Y brew bundle'
+alias update='HOMEBREW_ACCEPT_EULA=Y brew bundle --cleanup'
 {{ end }}
