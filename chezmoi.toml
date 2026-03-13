@@ -1,7 +1,6 @@
 [data]
     email = "fishermichaele@gmail.com"
-    pythonversion = "3.12"
-    managed = true
+    pythonversion = "3.9.1"
 [git]
     autoCommit = true
     autoPush = true
