@@ -1,4 +1,3 @@
-tap "hashicorp/tap"
 tap "microsoft/mssql-release"
 tap "pulumi/tap"
 tap "entireio/tap"
@@ -29,7 +28,6 @@ brew "perl"
 brew "pulumi/tap/pulumi"
 brew "awscli"
 brew "bash"
-brew "black", link: false
 brew "brotli"
 brew "docker"
 brew "libpng"
@@ -144,8 +142,6 @@ brew "s3cmd"
 brew "shellcheck"
 brew "superfile"
 brew "shc"
-brew "terraform"
-brew "terraform-docs"
 brew "the_silver_searcher"
 brew "tfk8s"
 brew "tmux"
@@ -163,7 +159,6 @@ brew "yq"
 {{ if eq .work true -}}
 brew "msodbcsql18"
 brew "mssql-tools18"
-mas "Parcel - Classic", id: 639968404
 {{ end -}}
 cask "itsytv"
 cask "1password-cli"
@@ -178,13 +173,12 @@ cask "google-drive"
 cask "signal"
 cask "google-chrome"
 mas "Mactracker", id: 430255202
-mas "Vimari", id: 1480933944
 mas "Parcel - Delivery Tracking", id: 375589283
 {{ end -}}
+mas "Home Assistant", id: 1099568401
 mas "1Password for Safari", id: 1569813296
 mas "Boop", id: 1518425043
 mas "Caffeinated", id: 1362171212
-mas "HTTPBot", id: 1232603544
 mas "Hidden Bar", id: 1452453066
 mas "Home Assistant", id: 1099568401
 mas "AVR Control", id: 1059512196
@@ -194,6 +188,7 @@ mas "SnippetsLab", id: 1006087419
 mas "Foodnoms", id: 1479461686
 mas "Instapaper", id: 288545208
 mas "Transmit 5", id: 1436522307
+mas "WhatsApp Messenger", id: 310633997
 {{ end -}}
 vscode "anthropic.claude-code"
 vscode "asvetliakov.vscode-neovim"
@@ -215,7 +210,6 @@ vscode "gitpod.gitpod-remote-ssh"
 vscode "google.geminicodeassist"
 vscode "googlecloudtools.cloudcode"
 vscode "gruntfuggly.todo-tree"
-vscode "hashicorp.terraform"
 vscode "james-yu.latex-workshop"
 vscode "mechatroner.rainbow-csv"
 vscode "ms-azuretools.vscode-containers"
