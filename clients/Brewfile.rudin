@@ -1,0 +1,6 @@
+ENV["HOMEBREW_ACCEPT_EULA"] = "Y"
+
+tap "microsoft/mssql-release", "https://github.com/Microsoft/homebrew-mssql-release"
+brew "azure-cli"
+brew "msodbcsql18"
+brew "mssql-tools18"
