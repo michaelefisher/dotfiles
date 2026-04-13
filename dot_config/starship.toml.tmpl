@@ -47,7 +47,9 @@ contexts = [
 
 [python]
 python_binary = ["python3"]
-disabled = true
+disabled = false
+format = 'via [${symbol}${version}( \($virtualenv\))]($style) '
+symbol = "🐍 "
 
 [shell]
 disabled = false
