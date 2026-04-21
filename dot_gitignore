@@ -1,6 +1,9 @@
+# types
 *config*
-.DS*
 *tokens*
 
 # python
 .python-version
+
+# trash
+**/**/.DS_Store
