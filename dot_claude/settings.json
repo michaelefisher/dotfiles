@@ -1,7 +1,20 @@
 {
+  "model": "sonnet",
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.sh",
     "padding": 2
-  }
+  },
+  "enabledPlugins": {
+    "opentax@opentax": true
+  },
+  "extraKnownMarketplaces": {
+    "opentax": {
+      "source": {
+        "source": "github",
+        "repo": "filedcom/opentax"
+      }
+    }
+  },
+  "effortLevel": "medium"
 }
