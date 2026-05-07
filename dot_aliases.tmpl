@@ -59,3 +59,7 @@ alias brew='env PATH="${PATH//$(pyenv root)\/shims:/}" brew'
 {{ if eq .chezmoi.os "darwin" }}
 alias update='HOMEBREW_ACCEPT_EULA=Y brew bundle'
 {{ end }}
+
+{{ if eq .chezmoi.os "darwin" }}
+alias install='hdiutil attach'
+{{ end }}
