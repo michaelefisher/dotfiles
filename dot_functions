@@ -1,0 +1,7 @@
+# Delete az production workspace copyJobs
+delete_copy_job() {
+  local copy_job_id="$1"
+  az rest --method DELETE \
+    --url "https://api.fabric.microsoft.com/v1/workspaces/f6b53aa0-9e5f-4a74-a683-35ca3a0ba5a6/copyJobs/${copy_job_id}" \
+    --resource "https://api.fabric.microsoft.com"
+}
