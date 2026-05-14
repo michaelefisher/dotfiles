@@ -5,3 +5,64 @@ delete_copy_job() {
     --url "https://api.fabric.microsoft.com/v1/workspaces/f6b53aa0-9e5f-4a74-a683-35ca3a0ba5a6/copyJobs/${copy_job_id}" \
     --resource "https://api.fabric.microsoft.com"
 }
+
+# timestamp
+function timestamp() {
+  date -j -f "%b %d %T %Z %Y" "${1}" "+%s"
+}
+
+# git
+fixup() { git commit -m "noop" --no-verify --allow-empty && git rebase -i "$@" ; }
+ac() { test "$@" != "" && git add . && git commit -m "$@" --no-verify ; }
+restore_all() { git st -s | cut -d' ' -f2 | xargs -L1 git restore ; }
+
+# urldecode
+urldecode() { : "${*//+/ }"; echo -e "${_//%/\\x}"; }
+
+# view octal
+octal() { stat -f "%OLp" $1; }
+
+# Activate gcloud configs
+activate() { gcloud config configurations activate "$@" ; }
+
+# k8s
+creds() {
+	gcloud container clusters get-credentials "$1" --zone us-central1-a --project "$2"
+}
+
+
+me() { if jq -V &>/dev/null; then curl -s ifconfig.me/all.json "$@" | jq; else printf "Must have jq installed!\n" && return 0; fi; }
+
+reset() { if [ "$#" -lt 2 ]; then echo "Usage: reset branch-name file1 [file2 ... fileN]"; return 1; fi; local branch_name=$1; shift; for file in "$@"; do git checkout "$branch_name" -- "$file"; if [ $? -ne 0 ]; then echo "Failed to reset $file"; return 1; fi; done; git status; echo -n "Do you want to commit the changes? (yes/no) "; read confirmation; if [[ "$confirmation" == "yes" ]]; then git add "$@"; git commit -m "Reset changes to branch $branch_name" --no-verify; else echo "Changes not committed."; fi; }
+
+squash() {
+    if [ "$#" -ne 1 ]; then
+        echo "Usage: squash_commits num_commits"
+        return 1
+    fi
+    local num_commits=$1
+    echo "The following commits will be squashed:"
+    git log -n "$num_commits" --oneline
+    echo -n "Do you want to squash these commits? (yes/no) "
+    read confirmation
+    if [[ "$confirmation" != "yes" ]]; then
+        echo "Commit squash aborted."
+        return 1
+    fi
+    git reset --soft HEAD~"$num_commits" &&
+    git commit --reuse-message=HEAD@{1}
+    if [ $? -eq 0 ]; then
+        echo "Commits successfully squashed."
+    else
+        echo "Failed to squash commits. Please resolve any conflicts and try again."
+    fi
+}
+
+# tmux ssh config
+ssh() {
+    local machine="$1"
+    shift
+    command ssh "$machine" "$@" -t 'tmux -CC attach || tmux -CC new'
+}
+
+
