@@ -3,6 +3,10 @@ if [ -f ~/.aliases ]; then
     source ~/.aliases
 fi
 
+if [ -f ~/.functions ]; then
+	source ~/.functions
+fi
+
 # Register autoloads
 fpath=($HOME/.zsh/autoloads $fpath)
 for f in $(ls $HOME/.zsh/autoloads); do
