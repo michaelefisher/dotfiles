@@ -1,2 +1,2 @@
-tap hashicorp/tap
+tap "hashicorp/tap"
 brew "hashicorp/tap/terraform"
