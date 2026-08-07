@@ -1,3 +1,4 @@
 tap "hashicorp/tap"
 brew "hashicorp/tap/terraform"
 brew "gum"
+brew "trufflehog"
