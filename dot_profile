@@ -30,3 +30,6 @@ fi
 export CHROME_REMOTE_DESKTOP_DEFAULT_DESKTOP_SIZES=1870x1332
 export CLOUDSDK_PYTHON_SITEPACKAGES=1
 
+
+. "$HOME/.local/bin/env"
+. "$HOME/.cargo/env"
