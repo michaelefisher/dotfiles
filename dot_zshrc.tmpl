@@ -34,9 +34,9 @@ bindkey "^A" vi-beginning-of-line
 bindkey "^E" vi-end-of-line
 
 
-# Export PATH here
-export PATH="/usr/local/sbin:/usr/local/opt/openjdk/bin:$HOME/.pyenv/shims/:$HOME/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/bin:$HOME/bin:$HOME/google-cloud-sdk/bin:$HOME/codeql-home/codeql:/$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
-
+----------------------- PATH HERE -------------------------------
+export PATH="/usr/local/sbin:/usr/local/opt/openjdk/bin:$HOME/.pyenv/shims/:$HOME/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/bin:$HOME/bin:$HOME/google-cloud-sdk/bin:$HOME/codeql-home/codeql:/$HOME/.local/bin:$HOME/.cargo/bin:$HOME/.cap/bin:$PATH"
+-----------------------------------------------------------------
 
 {{ if eq .chezmoi.os "darwin" }}
 export LDFLAGS="-L/usr/local/opt/bzip2/lib -L/usr/local/opt/zlib/lib -L/usr/local/opt/openssl@1.1/lib"
