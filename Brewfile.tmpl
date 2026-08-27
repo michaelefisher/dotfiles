@@ -1,6 +1,9 @@
-brew "LucasPickering/tap/slumber"
+# ===== Taps =====
 tap "pulumi/tap"
 tap "teamookla/speedtest"
+
+# ===== Homebrew formulae =====
+brew "LucasPickering/tap/slumber"
 brew "asdf"
 brew "agg"
 brew "zlib"
@@ -154,14 +157,19 @@ brew "watch"
 brew "wget"
 brew "yarn"
 brew "yq"
+
+# ===== Casks =====
 cask "itsytv"
 cask "1password-cli"
 cask "font-hack-nerd-font"
+
+# ===== macOS-only: taps, formulae, casks =====
 {{ if eq .chezmoi.os "darwin" -}}
 tap "buo/cask-upgrade"
 brew "reattach-to-user-namespace"
 cask "omnidisksweeper"
 {{ if eq .managed false -}}
+# ===== Mac App Store + personal-machine casks =====
 mas "Slack for Desktop", id: 803453959
 cask "google-drive"
 cask "signal"
@@ -183,6 +191,8 @@ mas "Foodnoms", id: 1479461686
 mas "Instapaper", id: 288545208
 mas "Transmit 5", id: 1436522307
 {{ end -}}
+
+# ===== VS Code extensions =====
 vscode "anthropic.claude-code"
 vscode "asvetliakov.vscode-neovim"
 vscode "bierner.markdown-mermaid"
@@ -246,4 +256,13 @@ vscode "sandipchitale.vscode-kubernetes-kubectl-ripper"
 vscode "synapsevscode.synapse"
 vscode "trailofbits.sarif-explorer"
 vscode "vscodevim.vim"
+
+# ===== npm global packages (latest only; versions cannot be pinned) =====
+npm "@google/clasp"
+npm "sheetlink"
+npm "vercel"
+npm "windmill-cli"
+npm "hunk"
+
+# ===== uv tools =====
 uv "git+https://github.com/sparfenyuk/mcp-proxy"
