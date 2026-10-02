@@ -58,14 +58,4 @@ squash() {
     fi
 }
 
-# tmux ssh config
-ssh() {
-    local machine="$1"; shift
-    if [ "$#" -gt 0 ]; then
-        command ssh "$machine" "$@"
-    else
-        command ssh -t "$machine" 'tmux -CC attach || tmux -CC new'
-    fi
-}
-
 
