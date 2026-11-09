@@ -84,6 +84,15 @@ FPATH="$HOME/.docker/completions:$FPATH"
 # prompt
 eval "$(starship init zsh)"
 
+# Added by the Hunk installer (https://hunk.dev)
+export PATH='/home/fisher/.hunk/bin':"$PATH"
+
+# add Pulumi to the PATH
+export PATH=$PATH:/home/fisher/.pulumi/bin
+
+# Adds gcx
+source ~/.config/zsh/gcx.zsh
+
 autoload -Uz compinit
 if [[ -n ${ZDOTDIR}/.zcompdump(#qNmh+24) ]]; then
     compinit
