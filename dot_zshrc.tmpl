@@ -93,6 +93,11 @@ export PATH=$PATH:/home/fisher/.pulumi/bin
 # Adds gcx
 source ~/.config/zsh/gcx.zsh
 
+# in SSH logins: keep a stable link to the forwarded agent
+if [[ -n $SSH_AUTH_SOCK && $SSH_AUTH_SOCK != ~/.ssh/agent.sock ]]; then
+	ln -sf "$SSH_AUTH_SOCK" ~/.ssh/agent.sock
+fi
+
 autoload -Uz compinit
 if [[ -n ${ZDOTDIR}/.zcompdump(#qNmh+24) ]]; then
     compinit
